@@ -1,0 +1,3 @@
+[0316/134545.376:ERROR:exception_handler_server.cc(524)] ConnectNamedPipe: A pipe bezárása folyamatban van. (0xE8)
+[0316/134915.589:ERROR:exception_handler_server.cc(524)] ConnectNamedPipe: A pipe bezárása folyamatban van. (0xE8)
+[0316/135926.328:ERROR:exception_handler_server.cc(524)] ConnectNamedPipe: A pipe bezárása folyamatban van. (0xE8)

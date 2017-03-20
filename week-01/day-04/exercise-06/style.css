@@ -1,0 +1,8 @@
+p {
+  border-left: 2px solid black;
+  font-size: 18px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  text-align: left;
+  width: 300px;
+}

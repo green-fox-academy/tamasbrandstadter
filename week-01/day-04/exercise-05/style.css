@@ -1,0 +1,20 @@
+h1 {
+  color: blue;
+}
+
+h2 {
+  color: #FFA623;
+}
+
+.types {
+  color: blue;
+  list-style-type: square;
+}
+
+.subtype-fruits {
+  list-style-type: disc;
+}
+
+span .subtype-fruits {
+  color: red;
+}

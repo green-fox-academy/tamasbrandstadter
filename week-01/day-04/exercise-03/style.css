@@ -1,0 +1,33 @@
+.top-box {
+  background-color: #E67676;
+  border: 15px solid #4285F4;
+  color: #FFF;
+  font-size: 36px;
+  font-family: arial;
+  height: 255px;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 350px;
+}
+
+.box-north {
+  padding-top: 50px;
+  padding-bottom: 25px;
+}
+
+
+.bottom-box {
+  background-color: #A9E6E6;
+  border: 15px solid #4285F4;
+  color: #FFF;
+  font-size: 36px;
+  font-family: arial;
+  height: 255px;
+  text-align: center;
+  width: 350px;
+}
+
+.box-south {
+  padding-top: 50px;
+  padding-bottom: 25px;
+}

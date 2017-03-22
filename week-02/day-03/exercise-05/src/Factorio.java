@@ -8,10 +8,11 @@ public class Factorio {
   }
 
   public static int factorio (int numbers) {
-    int result = 0;
-    for (int i = 0; i <= numbers ; i++) {
-      result = result + i;
-    }
+    int result = 1;
+    for (int i = 1; i <= numbers ; i++) {
+      result = result * i;
+      }
     return result;
-  }
+    }
+
 }

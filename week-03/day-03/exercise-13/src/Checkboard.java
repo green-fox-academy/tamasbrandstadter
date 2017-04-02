@@ -12,7 +12,7 @@ public class Checkboard {
     int columns;
     int rows;
 
-    for (rows = 0; rows < 8 ; rows++) {
+    for (rows = 0; rows < 8; rows++) {
       for (columns = 0; columns < 8; columns++) {
         x = columns * 20;
         y = rows * 20;
@@ -35,13 +35,13 @@ public class Checkboard {
     jFrame.setVisible(true);
   }
 
-static class ImagePanel extends JPanel {
-  @Override
-  protected void paintComponent(Graphics graphics) {
-    super.paintComponent(graphics);
-    mainDraw(graphics);
+  static class ImagePanel extends JPanel {
+    @Override
+    protected void paintComponent(Graphics graphics) {
+      super.paintComponent(graphics);
+      mainDraw(graphics);
 
+    }
   }
-}
 }
 

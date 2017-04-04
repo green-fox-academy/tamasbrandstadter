@@ -1,12 +1,12 @@
 public class Tree extends Plant {
   private String color;
 
-  @Override
-  public boolean needsWater() {
-    if (getCurrentWater() < 5) {
-      return true;
-    } else {
-      return false;
-    }
+  Tree(String color, int currentWater) {
+    super(currentWater, 10);
+    this.color = color;
+  }
+
+  public void waterLevel() {
+   setCurrentWater(10);
   }
 }

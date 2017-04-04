@@ -1,9 +1,14 @@
 public class Plant {
-
+  private int minWater;
   private int currentWater;
-  private int color;
 
-  Plant(int currentWater) {
+  Plant() {
+
+
+  }
+
+  Plant(int currentWater, int minWater) {
+    this.minWater = minWater;
     this.currentWater = currentWater;
   }
 
@@ -12,11 +17,7 @@ public class Plant {
   }
 
   public boolean needsWater() {
-    if (getCurrentWater() < 5) {
-      return true;
-    } else {
-      return false;
-    }
+    return (getCurrentWater() < minWater);
   }
 
   public int getCurrentWater() {

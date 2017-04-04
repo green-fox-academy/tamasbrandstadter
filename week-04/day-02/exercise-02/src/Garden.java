@@ -8,14 +8,18 @@ public class Garden {
   }
 
   public int countThirstyPlant() {
-    for (int i = 0; i < plantList.size() ; i++) {
-      if ()
+    int counter = 0;
+    for (int i = 0; i < plantList.size(); i++) {
+      if (plantList.get(i).needsWater()) {
+        counter++;
       }
     }
+    return counter;
   }
 
 
   public void watering() {
+    
 
 
 

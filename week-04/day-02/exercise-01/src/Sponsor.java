@@ -7,8 +7,8 @@ public class Sponsor extends Person {
     System.out.println("Hi, I'm " + this.getName() + " a " + this.getAge() + " year old " + this.getGender() + " who represents " + company + " and hired " + hiredStudents + " so far.");
   }
 
-  public void hire(int hiredStudents) {
-    this.hiredStudents += hiredStudents;
+  public void hire() {
+    this.hiredStudents++;
   }
 
   @Override

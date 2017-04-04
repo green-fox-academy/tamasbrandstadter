@@ -1,26 +1,45 @@
+import java.util.ArrayList;
+
 public class Main {
   public static void main(String[] args) {
-    Person person = new Person();
-    person.introduce();
-    person.getGoal();
+    ArrayList<Person> people = new ArrayList<>();
 
+    Person mark = new Person("Mark", 46, "male");
+    people.add(mark);
+    Person jane = new Person();
+    people.add(jane);
+    Student john = new Student("John Doe", 20, "male", "BME");
+    people.add(john);
     Student student = new Student();
-    Student student2 = new Student("Tom", 28, "male", "Tesla");
-    student.skipDays(5);
-    student.introduce();
-    student2.introduce();
-
+    people.add(student);
+    Mentor gandhi = new Mentor("Gandhi", 148, "male", "senior");
+    people.add(gandhi);
     Mentor mentor = new Mentor();
-    mentor.introduce();
-    Mentor mentor2 = new Mentor("Frank", 20, "male", "junior");
-    mentor2.introduce();
-    mentor2.getGoal();
-
+    people.add(mentor);
     Sponsor sponsor = new Sponsor();
-    sponsor.introduce();
-    sponsor.getGoal();
-    Sponsor sponsor2 = new Sponsor("Béla", 45, "male", "IBM");
-    sponsor2.hire(3);
-    sponsor2.introduce();
+    people.add(sponsor);
+    Sponsor elon = new Sponsor("Elon Musk", 46, "male", "SpaceX");
+    people.add(elon);
+
+    student.skipDays(3);
+
+    for (int i = 0; i < 5; i++) {
+      elon.hire();
+    }
+    for (int i = 0; i < 3; i++) {
+      sponsor.hire();
+    }
+
+    for(Person person : people) {
+      person.introduce();
+      person.getGoal();
+    }
+
+    LagopusClass badass = new LagopusClass("BADA55");
+    badass.addStudent("Béla");
+    badass.addStudent("John");
+    badass.addMentor("Test Mentor");
+    badass.addMentor("gandhi");
+    badass.info();
   }
 }

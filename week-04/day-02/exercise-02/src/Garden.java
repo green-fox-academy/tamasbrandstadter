@@ -17,13 +17,13 @@ public class Garden {
     return counter;
   }
 
-
-  public void watering() {
-    
-
-
-
-
+  public void watering(int amount) {
+    amount = amount / countThirstyPlant();
+    for (int i = 0; i < plantList.size() ; i++) {
+      if (plantList.get(i).needsWater()) {
+        plantList.get(i).setCurrentWater(amount);
+      }
+    }
   }
 
 

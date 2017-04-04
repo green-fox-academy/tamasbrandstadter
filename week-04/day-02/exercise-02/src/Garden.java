@@ -7,10 +7,11 @@ public class Garden {
     plantList.add(plant);
   }
 
-
-  public void watering() {
-
-
+  public void watering(int waterNeed) {
+    
   }
+
+
+
 
 }

@@ -3,10 +3,7 @@ public class Flower extends Plant {
   private String color;
 
   Flower(String color) {
-
+    this.currentWater = 4;
 
   }
-
-
-
 }

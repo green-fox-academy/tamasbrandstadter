@@ -3,12 +3,17 @@ public class Plant {
   private int currentWater;
   private int color;
 
-
   public boolean needsWater() {
-    if (currentWater < waterNeed) {
-      return true;
-    } else {
-      return false;
-    }
+    return currentWater < waterNeed;
   }
+
+  public int getWaterNeed() {
+    return this.waterNeed;
+  }
+
+  public int getCurrentWater() {
+    return this.currentWater;
+  }
+
 }
+

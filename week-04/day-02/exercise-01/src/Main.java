@@ -5,7 +5,9 @@ public class Main {
     person.getGoal();
 
     Student student = new Student();
-
-
+    Student student2 = new Student("Tom", 28, "male", "Tesla");
+    student.skipDays(5);
+    student.introduce();
+    student2.introduce();
   }
 }

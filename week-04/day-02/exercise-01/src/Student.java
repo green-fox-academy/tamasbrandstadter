@@ -9,7 +9,7 @@ public class Student extends Person {
 
   @Override
   public void introduce() {
-    System.out.println("Hi, I'm " + this.getName() + " and " + this.getAge() + " year old " + this.getGender() + " from " + previousOrganiztaion + "who skipped" + skippedDays + "from the course already.");
+    System.out.println("Hi, I'm " + this.getName() + " and " + this.getAge() + " year old " + this.getGender() + " from " + previousOrganiztaion + " who skipped " + skippedDays + " from the course already.");
   }
 
   public void skipDays(int numberOfDays) {
@@ -24,8 +24,8 @@ public class Student extends Person {
 
   Student() {
     super();
-    previousOrganiztaion = "The School of Life";
-
+    this.previousOrganiztaion = "The School of Life";
+    this.skippedDays = 0;
   }
 
 

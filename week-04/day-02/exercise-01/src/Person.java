@@ -22,4 +22,17 @@ public class Person {
     this.age = 30;
     this.gender = "female";
   }
+
+  public String getName() {
+    return this.name;
+  }
+
+  public String getGender() {
+    return this.gender;
+  }
+
+  public int getAge() {
+    return this.age;
+  }
+
 }

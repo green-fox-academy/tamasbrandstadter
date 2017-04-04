@@ -3,5 +3,8 @@ public class Main {
     Person person = new Person();
     person.introduce();
     person.getGoal();
+
+    Student student = new Student();
+
   }
 }

@@ -11,13 +11,13 @@ public class Person {
     System.out.println("My goal is: Live for the moment!");
   }
 
-  public Person(String name, int age, String gender) {
+  Person(String name, int age, String gender) {
     this.name = name;
     this.age = age;
     this.gender = gender;
   }
 
-  public Person() {
+  Person() {
     this.name = "Jane Doe";
     this.age = 30;
     this.gender = "female";

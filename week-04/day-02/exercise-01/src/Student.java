@@ -9,21 +9,23 @@ public class Student extends Person {
 
   @Override
   public void introduce() {
-    System.out.println("Hi, I'm " + name + " and " + age + " year old " + gender + " from " + previousOrganiztaion + "who skipped" + skippedDays + "from the course already.");
+    System.out.println("Hi, I'm " + this.getName() + " and " + this.getAge() + " year old " + this.getGender() + " from " + previousOrganiztaion + "who skipped" + skippedDays + "from the course already.");
   }
 
-  public int skipDays(int numberOfDays) {
-    this.skippedDays = skippedDays + numberOfDays;
+  public void skipDays(int numberOfDays) {
+    this.skippedDays += numberOfDays;
   }
 
-  public Student(String name, int age, String gender, String previousOrganiztaion) {
+  Student(String name, int age, String gender, String previousOrganiztaion) {
+    super(name, age, gender);
+    this.previousOrganiztaion = previousOrganiztaion;
     this.skippedDays = 0;
   }
 
-  public Student() {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
+  Student() {
+    super();
+    previousOrganiztaion = "The School of Life";
+
   }
 
 

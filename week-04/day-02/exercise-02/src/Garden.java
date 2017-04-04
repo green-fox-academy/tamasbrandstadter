@@ -7,8 +7,19 @@ public class Garden {
     plantList.add(plant);
   }
 
-  public void watering(int waterNeed) {
-    
+  public int countThirstyPlant() {
+    for (int i = 0; i < plantList.size() ; i++) {
+      if ()
+      }
+    }
+  }
+
+
+  public void watering() {
+
+
+
+
   }
 
 

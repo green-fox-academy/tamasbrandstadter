@@ -1,9 +1,17 @@
 public class Flower extends Plant {
-  private int currentWater;
+
   private String color;
 
-  Flower(String color) {
-    this.currentWater = 4;
-
+  Flower(String color, int currentWater) {
+    super(currentWater);
   }
-}
+
+
+
+    public void waterLevel() {
+      setCurrentWater(10);
+  }
+
+ }
+
+

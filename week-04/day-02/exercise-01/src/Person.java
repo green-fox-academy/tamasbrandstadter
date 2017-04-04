@@ -12,7 +12,9 @@ public class Person {
   }
 
   public Person(String name, int age, String gender) {
-
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
   }
 
   public Person() {
@@ -20,5 +22,4 @@ public class Person {
     this.age = 30;
     this.gender = "female";
   }
-
 }

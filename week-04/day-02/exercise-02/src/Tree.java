@@ -6,7 +6,7 @@ public class Tree extends Plant {
     this.color = color;
   }
 
-//  public void waterLevel() {
-//    setCurrentWater(10);
-//  }
+  public String getColor() {
+    return color;
+  }
 }

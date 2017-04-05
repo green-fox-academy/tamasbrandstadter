@@ -19,11 +19,18 @@ public class Plant {
 
   public boolean needsWater() {
     return (getCurrentWater() < minWater);
-
   }
 
   public int getCurrentWater() {
     return currentWater;
+  }
+
+  public int getMinWater() {
+    return minWater;
+  }
+
+  public int getMaxWater() {
+    return maxWater;
   }
 }
 

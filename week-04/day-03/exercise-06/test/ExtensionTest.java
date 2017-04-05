@@ -58,4 +58,10 @@ class ExtensionTest {
   void testTranslate_kolbice() {
     assertEquals("lavagovopuvus", extension.translate("lagopus"));
   }
+
+  @Test
+  void testMaxOfThreeNew() {
+    assertEquals(50, extension.maxOfThree(50, 30, 10));
+  }
+
 }

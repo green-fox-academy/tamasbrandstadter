@@ -7,9 +7,9 @@ public class Extension {
   }
 
   int maxOfThree(int a, int b, int c) {
-    if (a > b && c > a)
+    if (c > b && c > a)
       return c;
-    if (a < b && b > c)
+    if (b > a && b > c)
       return b;
     else
       return a;

@@ -61,7 +61,7 @@ class ExtensionTest {
 
   @Test
   void testMaxOfThreeNew() {
-    assertEquals(50, extension.maxOfThree(50, 30, 10));
+    assertEquals(60, extension.maxOfThree(40, 50, 60));
   }
 
 }

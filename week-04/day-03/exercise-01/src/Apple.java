@@ -1,4 +1,5 @@
 public class Apple {
+
   private String name;
 
   public Apple(String name) {
@@ -6,7 +7,7 @@ public class Apple {
   }
 
   public String getApple() {
-    return "apple";
+    return name;
   }
 
 }

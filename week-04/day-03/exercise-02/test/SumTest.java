@@ -12,7 +12,6 @@ public class SumTest {
   public void testSumIntegers() throws Exception {
     Sum sum = new Sum();
     ArrayList<Integer> myIntArrayList = new ArrayList<>();
-
     for (int i = 0; i < 5 ; i++) {
       myIntArrayList.add(i, i+1);
     }
@@ -26,7 +25,25 @@ public class SumTest {
     assertEquals(0, sum.sumIntegers(myIntArrayList));
   }
 
-  
+  @Test
+  public void testOneSizeList() throws Exception {
+    Sum sum = new Sum();
+    ArrayList<Integer> myIntArrayList = new ArrayList<>();
+    myIntArrayList.add(0,5);
+    assertEquals(5, sum.sumIntegers(myIntArrayList));
+  }
+
+
+  @Test
+  public void testNullList() throws Exception {
+    Sum sum = new Sum();
+
+
+
+
+  }
+
+
 
 
 }

@@ -9,10 +9,14 @@ public class Anagram {
     for (char c : text1.toCharArray()) {
       firstArrayList.add(c);
     }
+    System.out.println(firstArrayList);
+
     for (char d : text2.toCharArray()) {
       secondArrayList.add(d);
     }
-    if (firstArrayList.size() == secondArrayList.size() && firstArrayList.containsAll(secondArrayList) && secondArrayList.containsAll(firstArrayList)) {
+    System.out.println(secondArrayList);
+
+    if (firstArrayList.size() == secondArrayList.size() && secondArrayList.containsAll(firstArrayList) && firstArrayList.containsAll(secondArrayList)) {
       return true;
     } else {
       return false;

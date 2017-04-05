@@ -6,6 +6,6 @@ public class AnagramTest {
   @Test
   public void areTheyAnagrams() throws Exception {
     Anagram anagram = new Anagram();
-    assertEquals(true, anagram.areTheyAnagrams("adamm", "madam"));
+    assertEquals(false, anagram.areTheyAnagrams("aaaaa", "madam"));
   }
 }

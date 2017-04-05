@@ -1,5 +1,4 @@
 public class Flower extends Plant {
-
   private String color;
 
   Flower(String color, int currentWater, int maxWater) {
@@ -7,9 +6,9 @@ public class Flower extends Plant {
     this.color = color;
   }
 
-  public void waterLevel() {
-    setCurrentWater(10);
-  }
+//  public void waterLevel() {
+//    setCurrentWater(10);
+//  }
 }
 
 

@@ -13,6 +13,24 @@ public class Main {
     garden.add(tree);
     garden.add(tree2);
 
+    garden.countThirstyPlant();
+
+    if (flower.needsWater()) {
+      System.out.println("The yellow Flower needs water.");
+    } if (flower2.needsWater()) {
+      System.out.println("The blue Flower needs water.");
+    } if (tree.needsWater()) {
+      System.out.println("The purple Tree needs water.");
+    } if (tree2.needsWater()) {
+      System.out.println("The orange Tree needs water.");
+    }
+
+    garden.watering(40);
+
     
+    System.out.println("flower1 currentwater: " + flower.getCurrentWater());
+    System.out.println("flower2 currentwater: " + flower2.getCurrentWater());
+    System.out.println(tree.getCurrentWater());
+    System.out.println(tree2.getCurrentWater());
   }
 }

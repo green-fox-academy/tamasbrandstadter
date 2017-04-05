@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Garden {
@@ -17,12 +18,17 @@ public class Garden {
     return counter;
   }
 
+  public Garden(){
+    plantList = new ArrayList<>();
+  }
+
   public void watering(int amount) {
-    amount = amount / countThirstyPlant();
+    int newAmount = amount / countThirstyPlant();
     for (int i = 0; i < plantList.size() ; i++) {
       if (plantList.get(i).needsWater()) {
-        plantList.get(i).setCurrentWater(amount);
+        plantList.get(i).setCurrentWater(newAmount);
       }
     }
+    System.out.println("Watering with: " + amount);
   }
 }

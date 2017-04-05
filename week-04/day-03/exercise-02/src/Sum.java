@@ -4,7 +4,7 @@ public class Sum {
   private ArrayList<Integer> myIntArrayList;
 
   public Sum() {
-
+    myIntArrayList = new ArrayList<>();
   }
 
   public int sumIntegers(ArrayList<Integer> myIntArrayList) {

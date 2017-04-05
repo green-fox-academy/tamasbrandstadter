@@ -33,17 +33,10 @@ public class SumTest {
     assertEquals(5, sum.sumIntegers(myIntArrayList));
   }
 
-
   @Test
   public void testNullList() throws Exception {
     Sum sum = new Sum();
-
-
-
-
+    ArrayList<Integer> myIntArrayList = null;
+    assertEquals(0, sum.sumIntegers(myIntArrayList));
   }
-
-
-
-
 }

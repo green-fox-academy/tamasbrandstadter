@@ -6,6 +6,7 @@ public class Fibonacci {
   }
 
   public int fibonacciMethod(int nNumber) {
+
     if (nNumber == 0) {
       return 0;
     } if (nNumber == 1) {

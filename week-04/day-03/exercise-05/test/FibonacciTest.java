@@ -16,5 +16,9 @@ public class FibonacciTest {
     assertEquals(55, fibonacci.fibonacciMethod(10));
   }
 
-
+  @Test
+  public void fibonacciMethodWith1() throws Exception {
+    Fibonacci fibonacci = new Fibonacci();
+    assertEquals(1,  fibonacci.fibonacciMethod(1));
+  }
 }

@@ -1,18 +1,26 @@
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Anagram {
-  public static Scanner scanner = new Scanner(System.in);
-  private String text1 = "alma";
-  private String text2 = "maal";
 
+  ArrayList<Character> firstArrayList = new ArrayList<>();
+  ArrayList<Character> secondArrayList = new ArrayList<>();
 
   public boolean areTheyAnagrams(String text1, String text2) {
-    this.text1 = text1;
-    this.text2 = text2;
-    if (text2.contains(text1) && text1.length() == text2.length()) {
+    for (char c : text1.toCharArray()) {
+      firstArrayList.add(c);
+    }
+    for (char d : text2.toCharArray()) {
+      secondArrayList.add(d);
+    }
+    if (firstArrayList.size() == secondArrayList.size() && firstArrayList.containsAll(secondArrayList) && secondArrayList.containsAll(firstArrayList)) {
       return true;
     } else {
       return false;
     }
   }
 }
+
+
+
+
+

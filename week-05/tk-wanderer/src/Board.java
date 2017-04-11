@@ -16,10 +16,19 @@ public class Board extends JComponent implements KeyListener {
     testBoxY = 300;
 
     arrayForMap[0][3] = 1;
+    arrayForMap[0][5] = 1;
     arrayForMap[1][3] = 1;
+    arrayForMap[1][5] = 1;
+    arrayForMap[1][7] = 1;
+    arrayForMap[1][8] = 1;
     arrayForMap[2][1] = 1;
     arrayForMap[2][2] = 1;
     arrayForMap[2][3] = 1;
+    arrayForMap[2][3] = 1;
+    arrayForMap[2][5] = 1;
+    arrayForMap[2][7] = 1;
+    arrayForMap[2][8] = 1;
+
 
     // set the size of your draw board
     setPreferredSize(new Dimension(720, 720));
@@ -37,20 +46,19 @@ public class Board extends JComponent implements KeyListener {
 
     for (int i = 0; i < 10; i++) {
       for (int j = 0; j < 10; j++) {
-        if (arrayForMap[i][i] == 1) {
-        PositionedImage wallImage = new PositionedImage("assets/wall.png", 0, i * 72);
-        wallImage.draw(graphics);
-      } else {
-        PositionedImage floorImage = new PositionedImage("assets/floor.png", 0, i*72);
-        floorImage.draw(graphics);
+        if (arrayForMap[i][j] == 1) {
+          PositionedImage wallImage = new PositionedImage("assets/wall.png", j * 72, i * 72);
+          wallImage.draw(graphics);
+        } else {
+          PositionedImage floorImage = new PositionedImage("assets/floor.png", j * 72, i * 72);
+          floorImage.draw(graphics);
+        }
       }
+    }
 //      for (int j = 0; j < 10; j++) {
 //
 //        PositionedImage image3 = new PositionedImage("assets/floor.png", j * 72, j * 72);
 //        image3.draw(graphics);
-      }
-
-    }
   }
 
 
@@ -71,7 +79,7 @@ public class Board extends JComponent implements KeyListener {
     // When the up or down keys hit, we change the position of our box
     if (e.getKeyCode() == KeyEvent.VK_UP) {
       testBoxY -= 100;
-    } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+    } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
       testBoxY += 100;
     }
     // and redraw to have a new picture with the new coordinates

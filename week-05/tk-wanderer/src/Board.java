@@ -1,5 +1,3 @@
-import javafx.geometry.Pos;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -10,16 +8,14 @@ public class Board extends JComponent implements KeyListener {
   private int testBoxX;
   private int testBoxY;
   private int[][] arrayForMap = new int[10][10];
-  private String hero = "assets/hero-down.png";
+  private String heroDefault = "assets/hero-down.png";
   private String heroDown = "assets/hero-down.png";
   private String heroUp = "assets/hero-up.png";
-  String heroRight = "assets/hero-right.png";
-  String heroLeft = "assets/hero-left.png";
-
+  private String heroRight = "assets/hero-right.png";
+  private String heroLeft = "assets/hero-left.png";
 
 
   public Board() {
-
     testBoxX = 0;
     testBoxY = 0;
 
@@ -61,7 +57,7 @@ public class Board extends JComponent implements KeyListener {
         }
       }
     }
-    PositionedImage heroImage = new PositionedImage(hero, testBoxX, testBoxY);
+    PositionedImage heroImage = new PositionedImage(heroDefault, testBoxX, testBoxY);
     heroImage.draw(graphics);
 
   }
@@ -77,22 +73,21 @@ public class Board extends JComponent implements KeyListener {
 
   }
 
-
   @Override
   public void keyReleased(KeyEvent e) {
 
     if (e.getKeyCode() == KeyEvent.VK_UP) {
       testBoxY -= 72;
-      hero = heroUp;
+      heroDefault = heroUp;
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
       testBoxY += 72;
-      hero = heroDown;
+      heroDefault = heroDown;
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
       testBoxX += 72;
-      hero = heroRight;
+      heroDefault = heroRight;
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
       testBoxX -= 72;
-      hero = heroLeft;
+      heroDefault = heroLeft;
     }
     repaint();
   }

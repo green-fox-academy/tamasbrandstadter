@@ -62,7 +62,6 @@ public class Board extends JComponent implements KeyListener {
 
   }
 
-  // To be a KeyListener the class needs to have these 3 methods in it
   @Override
   public void keyTyped(KeyEvent e) {
 

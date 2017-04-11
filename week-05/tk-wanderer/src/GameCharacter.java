@@ -29,9 +29,3 @@ public class GameCharacter {
   }
 }
 
-
-
-//        these values can change during the game
-//        when a character's health point is 0 or below, it is dead
-//        it disappears from the area
-//        if its the hero, it is the end of the game

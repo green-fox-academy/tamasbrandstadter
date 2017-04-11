@@ -84,32 +84,28 @@ public class Board extends JComponent implements KeyListener {
 
     if (e.getKeyCode() == KeyEvent.VK_UP) {
       if (currentPositionY == 0 || (arrayForMap[getPos(testBoxY) - 1][getPos(testBoxX)] == 1)) {
-        heroDefault = heroUp;
       } else {
         testBoxY -= 72;
-        heroDefault = heroUp;
       }
+      heroDefault = heroUp;
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
       if (currentPositionY == 648 || (arrayForMap[getPos(testBoxY) + 1][getPos(testBoxX)] == 1) ) {
-        heroDefault = heroDown;
       } else {
         testBoxY += 72;
-        heroDefault = heroDown;
       }
+      heroDefault = heroDown;
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
       if (currentPositionX == 648 || (arrayForMap[getPos(testBoxY)][getPos(testBoxX) + 1] == 1)) {
-        heroDefault = heroRight;
       } else {
         testBoxX += 72;
-        heroDefault = heroRight;
       }
+      heroDefault = heroRight;
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
       if (currentPositionX == 0 || (arrayForMap[getPos(testBoxY)][getPos(testBoxX) - 1] == 1) ) {
-        heroDefault = heroLeft;
       } else {
         testBoxX -= 72;
-        heroDefault = heroLeft;
       }
+      heroDefault = heroLeft;
     }
     repaint();
   }

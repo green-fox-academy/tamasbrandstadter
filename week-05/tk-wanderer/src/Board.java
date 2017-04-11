@@ -62,6 +62,11 @@ public class Board extends JComponent implements KeyListener {
 
   }
 
+  public int getPos(int x) {
+    int pos = x / 72;
+    return pos;
+  }
+
   @Override
   public void keyTyped(KeyEvent e) {
 
@@ -78,28 +83,28 @@ public class Board extends JComponent implements KeyListener {
    this.currentPositionY = testBoxY;
 
     if (e.getKeyCode() == KeyEvent.VK_UP) {
-      if (currentPositionY == 0) {
+      if (currentPositionY == 0 || (arrayForMap[getPos(testBoxY) - 1][getPos(testBoxX)] == 1)) {
         heroDefault = heroUp;
       } else {
         testBoxY -= 72;
         heroDefault = heroUp;
       }
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-      if (currentPositionY == 720 - 72) {
+      if (currentPositionY == 648 || (arrayForMap[getPos(testBoxY) + 1][getPos(testBoxX)] == 1) ) {
         heroDefault = heroDown;
       } else {
         testBoxY += 72;
         heroDefault = heroDown;
       }
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-      if (currentPositionX == 720 - 72) {
+      if (currentPositionX == 648 || (arrayForMap[getPos(testBoxY)][getPos(testBoxX) + 1] == 1)) {
         heroDefault = heroRight;
       } else {
         testBoxX += 72;
         heroDefault = heroRight;
       }
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-      if (currentPositionX == 0) {
+      if (currentPositionX == 0 || (arrayForMap[getPos(testBoxY)][getPos(testBoxX) - 1] == 1) ) {
         heroDefault = heroLeft;
       } else {
         testBoxX -= 72;

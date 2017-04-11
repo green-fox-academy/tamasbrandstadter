@@ -7,13 +7,19 @@ public class Board extends JComponent implements KeyListener {
 
   int testBoxX;
   int testBoxY;
+  int[][] arrayForMap = new int[10][10];
+
 
   public Board() {
-    //int[][] wallPosition = {0,0,0,1,0,1,0,0,0,0}
-
 
     testBoxX = 300;
     testBoxY = 300;
+
+    arrayForMap[0][3] = 1;
+    arrayForMap[1][3] = 1;
+    arrayForMap[2][1] = 1;
+    arrayForMap[2][2] = 1;
+    arrayForMap[2][3] = 1;
 
     // set the size of your draw board
     setPreferredSize(new Dimension(720, 720));
@@ -27,13 +33,23 @@ public class Board extends JComponent implements KeyListener {
     graphics.fillRect(testBoxX, testBoxY, 72, 72);
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
+
+
     for (int i = 0; i < 10; i++) {
-      PositionedImage image2 = new PositionedImage("assets/floor.png", 0, 0 + i*72);
       for (int j = 0; j < 10; j++) {
-        PositionedImage image3 = new PositionedImage("assets/floor.png", 0+i*72, 0+j*72);
-        image3.draw(graphics);
+        if (arrayForMap[i][i] == 1) {
+        PositionedImage wallImage = new PositionedImage("assets/wall.png", 0, i * 72);
+        wallImage.draw(graphics);
+      } else {
+        PositionedImage floorImage = new PositionedImage("assets/floor.png", 0, i*72);
+        floorImage.draw(graphics);
       }
-      image2.draw(graphics);
+//      for (int j = 0; j < 10; j++) {
+//
+//        PositionedImage image3 = new PositionedImage("assets/floor.png", j * 72, j * 72);
+//        image3.draw(graphics);
+      }
+
     }
   }
 

@@ -4,7 +4,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class Board extends JComponent implements KeyListener {
-
   private int testBoxX;
   private int testBoxY;
   private int[][] arrayForMap = new int[10][10];
@@ -15,7 +14,6 @@ public class Board extends JComponent implements KeyListener {
   private String heroLeft = "assets/hero-left.png";
   private int currentPositionX;
   private int currentPositionY;
-
 
   public Board() {
     testBoxX = 0;

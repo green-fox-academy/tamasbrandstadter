@@ -7,9 +7,15 @@ import java.awt.event.KeyListener;
 
 public class Board extends JComponent implements KeyListener {
 
-  int testBoxX;
-  int testBoxY;
-  int[][] arrayForMap = new int[10][10];
+  private int testBoxX;
+  private int testBoxY;
+  private int[][] arrayForMap = new int[10][10];
+  private String hero = "assets/hero-down.png";
+  private String heroDown = "assets/hero-down.png";
+  private String heroUp = "assets/hero-up.png";
+  String heroRight = "assets/hero-right.png";
+  String heroLeft = "assets/hero-left.png";
+
 
 
   public Board() {
@@ -55,8 +61,9 @@ public class Board extends JComponent implements KeyListener {
         }
       }
     }
-    PositionedImage heroImage = new PositionedImage("assets/hero-down.png", testBoxX, testBoxY);
+    PositionedImage heroImage = new PositionedImage(hero, testBoxX, testBoxY);
     heroImage.draw(graphics);
+
   }
 
   // To be a KeyListener the class needs to have these 3 methods in it
@@ -76,12 +83,16 @@ public class Board extends JComponent implements KeyListener {
 
     if (e.getKeyCode() == KeyEvent.VK_UP) {
       testBoxY -= 72;
+      hero = heroUp;
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
       testBoxY += 72;
+      hero = heroDown;
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
       testBoxX += 72;
+      hero = heroRight;
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
       testBoxX -= 72;
+      hero = heroLeft;
     }
     repaint();
   }

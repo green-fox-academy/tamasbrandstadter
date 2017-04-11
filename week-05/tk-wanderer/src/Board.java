@@ -9,6 +9,9 @@ public class Board extends JComponent implements KeyListener {
   int testBoxY;
 
   public Board() {
+    //int[][] wallPosition = {0,0,0,1,0,1,0,0,0,0}
+
+
     testBoxX = 300;
     testBoxY = 300;
 
@@ -20,11 +23,18 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
-    graphics.fillRect(testBoxX, testBoxY, 100, 100);
+
+    graphics.fillRect(testBoxX, testBoxY, 72, 72);
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
-    PositionedImage image = new PositionedImage("yourimage.png", 300, 300);
-    image.draw(graphics);
+    for (int i = 0; i < 10; i++) {
+      PositionedImage image2 = new PositionedImage("assets/floor.png", 0, 0 + i*72);
+      for (int j = 0; j < 10; j++) {
+        PositionedImage image3 = new PositionedImage("assets/floor.png", 0+i*72, 0+j*72);
+        image3.draw(graphics);
+      }
+      image2.draw(graphics);
+    }
   }
 
 

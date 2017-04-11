@@ -1,3 +1,5 @@
+import javafx.geometry.Pos;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -12,8 +14,8 @@ public class Board extends JComponent implements KeyListener {
 
   public Board() {
 
-    testBoxX = 300;
-    testBoxY = 300;
+    testBoxX = 0;
+    testBoxY = 0;
 
     arrayForMap[0][3] = 1;
     arrayForMap[0][5] = 1;
@@ -28,9 +30,12 @@ public class Board extends JComponent implements KeyListener {
     arrayForMap[2][5] = 1;
     arrayForMap[2][7] = 1;
     arrayForMap[2][8] = 1;
+    arrayForMap[3][5] = 1;
+    arrayForMap[4][0] = 1;
+    arrayForMap[4][1] = 1;
+    arrayForMap[4][2] = 1;
+    arrayForMap[4][3] = 1;
 
-
-    // set the size of your draw board
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
   }
@@ -39,10 +44,8 @@ public class Board extends JComponent implements KeyListener {
   public void paint(Graphics graphics) {
     super.paint(graphics);
 
-    graphics.fillRect(testBoxX, testBoxY, 72, 72);
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
-
 
     for (int i = 0; i < 10; i++) {
       for (int j = 0; j < 10; j++) {
@@ -55,12 +58,9 @@ public class Board extends JComponent implements KeyListener {
         }
       }
     }
-//      for (int j = 0; j < 10; j++) {
-//
-//        PositionedImage image3 = new PositionedImage("assets/floor.png", j * 72, j * 72);
-//        image3.draw(graphics);
+    PositionedImage heroImage = new PositionedImage("assets/hero-down.png", testBoxX, testBoxY);
+    heroImage.draw(graphics);
   }
-
 
   // To be a KeyListener the class needs to have these 3 methods in it
   @Override
@@ -78,9 +78,9 @@ public class Board extends JComponent implements KeyListener {
   public void keyReleased(KeyEvent e) {
     // When the up or down keys hit, we change the position of our box
     if (e.getKeyCode() == KeyEvent.VK_UP) {
-      testBoxY -= 100;
+      testBoxY -= 72;
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-      testBoxY += 100;
+      testBoxY += 72;
     }
     // and redraw to have a new picture with the new coordinates
     repaint();

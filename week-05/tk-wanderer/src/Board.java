@@ -46,7 +46,7 @@ public class Board extends JComponent implements KeyListener {
   public void paint(Graphics graphics) {
     super.paint(graphics);
 
-     for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 10; i++) {
       for (int j = 0; j < 10; j++) {
         if (arrayForMap[i][j] == 1) {
           PositionedImage wallImage = new PositionedImage("assets/wall.png", j * 72, i * 72);
@@ -75,21 +75,39 @@ public class Board extends JComponent implements KeyListener {
 
   @Override
   public void keyReleased(KeyEvent e) {
+    int currentPositionX = testBoxX;
+    int currentPositionY = testBoxY;
 
     if (e.getKeyCode() == KeyEvent.VK_UP) {
-      testBoxY -= 72;
-      heroDefault = heroUp;
+      if (currentPositionY == 0) {
+        heroDefault = heroUp;
+      } else {
+        testBoxY -= 72;
+        heroDefault = heroUp;
+      }
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-      testBoxY += 72;
-      heroDefault = heroDown;
+      if (currentPositionY == 720 - 72) {
+        heroDefault = heroDown;
+      } else {
+        testBoxY += 72;
+        heroDefault = heroDown;
+      }
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-      testBoxX += 72;
-      heroDefault = heroRight;
+      if (currentPositionX == 720 - 72) {
+        heroDefault = heroRight;
+      } else {
+        testBoxX += 72;
+        heroDefault = heroRight;
+      }
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-      testBoxX -= 72;
-      heroDefault = heroLeft;
+      if (currentPositionX == 0) {
+        heroDefault = heroLeft;
+      } else {
+        testBoxX -= 72;
+        heroDefault = heroLeft;
+      }
+      repaint();
     }
-    repaint();
   }
 }
 

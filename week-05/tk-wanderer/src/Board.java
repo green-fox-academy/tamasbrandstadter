@@ -13,6 +13,8 @@ public class Board extends JComponent implements KeyListener {
   private String heroUp = "assets/hero-up.png";
   private String heroRight = "assets/hero-right.png";
   private String heroLeft = "assets/hero-left.png";
+  private int currentPositionX;
+  private int currentPositionY;
 
 
   public Board() {
@@ -74,8 +76,8 @@ public class Board extends JComponent implements KeyListener {
 
   @Override
   public void keyReleased(KeyEvent e) {
-    int currentPositionX = testBoxX;
-    int currentPositionY = testBoxY;
+   this.currentPositionX = testBoxX;
+   this.currentPositionY = testBoxY;
 
     if (e.getKeyCode() == KeyEvent.VK_UP) {
       if (currentPositionY == 0) {
@@ -105,8 +107,8 @@ public class Board extends JComponent implements KeyListener {
         testBoxX -= 72;
         heroDefault = heroLeft;
       }
-      repaint();
     }
+    repaint();
   }
 }
 

@@ -6,7 +6,7 @@ import java.awt.event.KeyListener;
 public class Board extends JComponent implements KeyListener {
   private int testBoxX;
   private int testBoxY;
-  private int[][] arrayForMap = new int[10][10];
+  //private int[][] arrayForMap = new int[10][10];
   private String heroDefault = "assets/hero-down.png";
   private String heroDown = "assets/hero-down.png";
   private String heroUp = "assets/hero-up.png";
@@ -14,29 +14,20 @@ public class Board extends JComponent implements KeyListener {
   private String heroLeft = "assets/hero-left.png";
   private int currentPositionX;
   private int currentPositionY;
+  private int[][] arrayForMap = {{0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
+          {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
+          {0, 1, 1, 1, 0, 1, 0, 1, 1, 0},
+          {0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
+          {1, 1, 1, 1, 0, 1, 1, 1, 1, 0},
+          {0, 1, 0, 1, 0, 0, 0, 0, 1, 0},
+          {0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
+          {0, 0, 0, 0, 0, 1, 1, 0, 1, 0},
+          {0, 1, 1, 1, 0, 0, 0, 0, 1, 0},
+          {0, 0, 0, 1, 0, 1, 1, 0, 1, 0}};
 
   public Board() {
     testBoxX = 0;
     testBoxY = 0;
-
-    arrayForMap[0][3] = 1;
-    arrayForMap[0][5] = 1;
-    arrayForMap[1][3] = 1;
-    arrayForMap[1][5] = 1;
-    arrayForMap[1][7] = 1;
-    arrayForMap[1][8] = 1;
-    arrayForMap[2][1] = 1;
-    arrayForMap[2][2] = 1;
-    arrayForMap[2][3] = 1;
-    arrayForMap[2][3] = 1;
-    arrayForMap[2][5] = 1;
-    arrayForMap[2][7] = 1;
-    arrayForMap[2][8] = 1;
-    arrayForMap[3][5] = 1;
-    arrayForMap[4][0] = 1;
-    arrayForMap[4][1] = 1;
-    arrayForMap[4][2] = 1;
-    arrayForMap[4][3] = 1;
 
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
@@ -59,7 +50,6 @@ public class Board extends JComponent implements KeyListener {
     }
     PositionedImage heroImage = new PositionedImage(heroDefault, testBoxX, testBoxY);
     heroImage.draw(graphics);
-
   }
 
   public int getPos(int x) {

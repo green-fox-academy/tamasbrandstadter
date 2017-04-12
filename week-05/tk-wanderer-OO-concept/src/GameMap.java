@@ -1,21 +1,21 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Map {
-  private int[][] floorMap;
+public class GameMap {
+  public static int[][] floorMap = new int[][]{{0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
+          {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
+          {0, 1, 1, 1, 0, 1, 0, 1, 1, 0},
+          {0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
+          {1, 1, 1, 1, 0, 1, 1, 1, 1, 0},
+          {0, 1, 0, 1, 0, 0, 0, 0, 1, 0},
+          {0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
+          {0, 0, 0, 0, 0, 1, 1, 0, 1, 0},
+          {0, 1, 1, 1, 0, 0, 0, 0, 1, 0},
+          {0, 0, 0, 1, 0, 1, 1, 0, 1, 0}};
   private List<List<GameObject>> gameObjects;
 
-  public Map() {
-    this.floorMap = new int[][]{{0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
-            {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
-            {0, 1, 1, 1, 0, 1, 0, 1, 1, 0},
-            {0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-            {1, 1, 1, 1, 0, 1, 1, 1, 1, 0},
-            {0, 1, 0, 1, 0, 0, 0, 0, 1, 0},
-            {0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
-            {0, 0, 0, 0, 0, 1, 1, 0, 1, 0},
-            {0, 1, 1, 1, 0, 0, 0, 0, 1, 0},
-            {0, 0, 0, 1, 0, 1, 1, 0, 1, 0}};
+  public GameMap() {
+
     this.gameObjects = new ArrayList<>(new ArrayList<>());
   }
 
@@ -35,5 +35,9 @@ public class Map {
 
   public List<List<GameObject>> getGameObjects() {
     return gameObjects;
+  }
+
+  public int[][] getFloorMap() {
+    return floorMap;
   }
 }

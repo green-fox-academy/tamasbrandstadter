@@ -3,10 +3,10 @@ import java.awt.*;
 import java.util.List;
 
 public class GameEngine extends JComponent {
-  private Map map;
+  private GameMap map;
 
   public GameEngine() {
-    this.map = new Map();
+    this.map = new GameMap();
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
   }

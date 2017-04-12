@@ -27,4 +27,7 @@ public class GameCharacter extends GameObject {
       move(+72, 0);
     }
   }
+
+
+
 }

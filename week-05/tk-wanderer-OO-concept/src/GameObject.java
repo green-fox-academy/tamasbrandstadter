@@ -26,6 +26,10 @@ public class GameObject {
     this.posX = posX+x;
     this.posY = posY+y;
   }
+
+  public void setCostume(String costume) {
+    this.costume = costume;
+  }
 }
 
 

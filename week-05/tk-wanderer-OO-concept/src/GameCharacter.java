@@ -4,22 +4,22 @@ public class GameCharacter extends GameObject {
     super(posX, posY, costume);
   }
 
-  public moveUp() {
-
-  }
-
-  public moveDown() {
-
-  }
-
-
-  public moveLeft(){
-
-  }
-
-  public moveRight(){
-
-  }
+//  public moveUp() {
+//
+//  }
+//
+//  public moveDown() {
+//
+//  }
+//
+//
+//  public moveLeft(){
+//
+//  }
+//
+//  public moveRight(){
+//
+//  }
 
 
 

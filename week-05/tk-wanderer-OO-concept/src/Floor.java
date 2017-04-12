@@ -1,8 +1,6 @@
-public class Floor extend Tiles {
+public class Floor extends Tile {
 
-
-  public boolean isClear() {
-    return true;
+  public Floor(int posX, int posY, String costume) {
+    super(posX, posY, costume);
   }
-
 }

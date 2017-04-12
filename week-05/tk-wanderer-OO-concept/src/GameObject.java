@@ -10,9 +10,9 @@ public class GameObject {
     this.costume = costume;
   }
 
-    public void move() {
-    this.posX = getCharPosX();
-    this.posY = getCharPosY();
+//    public void move() {
+//    this.posX = getCharPosX();
+//    this.posY = getCharPosY();
   }
 
 

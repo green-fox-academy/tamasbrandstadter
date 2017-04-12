@@ -5,16 +5,7 @@ public class Tile extends GameObject {
     super(posX, posY, costume);
   }
 
-  public boolean isWall() {
 
-
-
-  }
-
-  public boolean isClear() {
-
-
-  }
 
 
 }

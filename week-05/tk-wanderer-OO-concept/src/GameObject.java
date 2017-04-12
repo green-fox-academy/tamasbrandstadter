@@ -3,4 +3,22 @@ public class GameObject {
   private int posY;
   private String costume;
 
+
+  public GameObject(int posX, int posY, String costume) {
+    this.posX = posX;
+    this.posY = posY;
+    this.costume = costume;
+  }
+
+    public void move() {
+    this.posX = getCharPosX();
+    this.posY = getCharPosY();
+  }
+
+
+
+
+
+
+
 }

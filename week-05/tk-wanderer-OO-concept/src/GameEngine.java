@@ -2,22 +2,28 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class GameEngine extends JComponent implements KeyListener {
   private GameMap map;
   private Hero hero;
+  private Skeleton skeleton;
+  private Skeleton skeleton1;
+  private Skeleton skeleton2;
 
   public GameEngine() {
     this.map = new GameMap();
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
     hero = new Hero(0, 0, "assets/hero-down.png", map);
+    skeleton = new Skeleton(map.randCoordinate()[0], map.randCoordinate()[1], "assets/skeleton.png", map);
+    skeleton1 = new Skeleton(map.randCoordinate()[0], map.randCoordinate()[1], "assets/skeleton.png", map);
+    skeleton2 = new Skeleton(map.randCoordinate()[0], map.randCoordinate()[1], "assets/skeleton.png", map);
     map.fillMap();
     map.getGameObjects().add(hero);
-
+    map.getGameObjects().add(skeleton);
+    map.getGameObjects().add(skeleton1);
+    map.getGameObjects().add(skeleton2);
   }
 
   @Override

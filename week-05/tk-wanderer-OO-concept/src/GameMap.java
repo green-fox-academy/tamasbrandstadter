@@ -38,7 +38,7 @@ public class GameMap {
       if (g.getPosX() == posX && g.getPosY() == posY) {
         GameObject floor = new Floor();
         g.getClass().equals(floor.getClass());
-        return true;
+        return false;
       }
     }
     return true;
@@ -64,4 +64,22 @@ public class GameMap {
   public int[][] getFloorMap() {
     return floorMap;
   }
+
+  public int[] randCoordinate() {
+    int[] randomCoordinate = new int[2];
+    int x = (int) (Math.random() * 10) * 72;
+    int y = (int) (Math.random() * 10) * 72;
+    while ((isCharacter(x, y) == true) && (isItFloor(x, y) == false)) {
+      x = (int) (Math.random() * 10) * 72;
+      y = (int) (Math.random() * 10) * 72;
+    }
+    randomCoordinate[0] = x;
+    randomCoordinate[1] = y;
+    return randomCoordinate;
+  }
 }
+
+
+
+
+

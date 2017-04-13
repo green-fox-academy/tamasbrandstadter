@@ -15,7 +15,6 @@ public class GameMap {
   private List<List<GameObject>> gameObjects;
 
   public GameMap() {
-
     this.gameObjects = new ArrayList<>(new ArrayList<>());
   }
 

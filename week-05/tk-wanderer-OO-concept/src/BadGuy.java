@@ -3,9 +3,4 @@ public class BadGuy extends GameCharacter {
     super(posX, posY, costume, map);
   }
 
-//  public int[] getRandomXRandomY() {
-//    int randomXY[] =
-//
-//  }
-
 }

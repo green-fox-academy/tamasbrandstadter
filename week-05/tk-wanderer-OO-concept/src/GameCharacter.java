@@ -1,15 +1,14 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class GameCharacter extends GameObject {
 
-  private List<GameObject> characterList;
   private GameMap map;
 
   public GameCharacter(int posX, int posY, String costume, GameMap map) {
     super(posX, posY, costume);
-    this.characterList = new ArrayList<>();
     this.map = map;
+  }
+
+  public GameCharacter() {
+
   }
 
   public void moveUp() {
@@ -36,7 +35,4 @@ public class GameCharacter extends GameObject {
     }
   }
 
-  public List<GameObject> getCharacterList() {
-    return characterList;
-  }
 }

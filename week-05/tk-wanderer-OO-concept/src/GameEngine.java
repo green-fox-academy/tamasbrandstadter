@@ -14,23 +14,21 @@ public class GameEngine extends JComponent implements KeyListener {
     this.map = new GameMap();
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
-    hero = new Hero(0, 0, "assets/hero-down.png");
+    hero = new Hero(0, 0, "assets/hero-down.png", map);
     map.fillMap();
-    List<GameObject> herolist = new ArrayList<>();
-    herolist.add(hero);
-    map.getGameObjects().add(herolist);
+    map.getGameObjects().add(hero);
+
   }
 
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
-    for (List<GameObject> list : map.getGameObjects()) {
-      for (GameObject temp : list) {
+      for (GameObject temp : map.getGameObjects()) {
         PositionedImage image = new PositionedImage(temp.getCostume(), temp.getPosX(), temp.getPosY());
         image.draw(graphics);
       }
     }
-  }
+
 
   public static void main(String[] args) {
     JFrame frame = new JFrame("RPG Game");

@@ -2,7 +2,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ExtensionTest {
@@ -31,22 +30,22 @@ class ExtensionTest {
 
   @Test
   void testMedian_four() {
-    assertEquals(5, extension.median(Arrays.asList(7,5,3,5)));
+    assertEquals(4.5, extension.median(Arrays.asList(7, 5, 3, 4)));
   }
 
   @Test
   void testMedian_five() {
-    assertEquals(3, extension.median(Arrays.asList(1,2,3,4,5)));
+    assertEquals(3, extension.median(Arrays.asList(1, 2, 3, 4, 5)));
   }
 
   @Test
   void testIsVowel_a() {
-    assertTrue(extension.isVowel('a'));
+    assertTrue(extension.isVowel('A'));
   }
 
   @Test
   void testIsVowel_u() {
-    assertTrue(extension.isVowel('u'));
+    assertTrue(extension.isVowel('U'));
   }
 
   @Test
@@ -58,10 +57,4 @@ class ExtensionTest {
   void testTranslate_kolbice() {
     assertEquals("lavagovopuvus", extension.translate("lagopus"));
   }
-
-  @Test
-  void testMaxOfThreeNew() {
-    assertEquals(60, extension.maxOfThree(40, 50, 60));
-  }
-
 }

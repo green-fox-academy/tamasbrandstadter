@@ -1,25 +1,30 @@
 public class Counter {
-  public int counter = 0;
+  private int count;
+  private int initialValue;
 
-  public Counter(int counter) {
-    this.counter = counter;
+  public Counter(int count) {
+    this.count = count;
+    this.initialValue = count;
   }
 
-  public int addNumber(int number) {
-    this.counter = counter + number;
-    return this.counter;
+  public Counter() {
+    this.count = 0;
+    this.initialValue = 0;
+  }
+
+  public void add(int number) {
+    this.count += number;
   }
 
   public void add() {
-    this.counter++;
+    this.count++;
   }
 
-  public int getValue(){
-    int value = this.counter;
-    return value;
+  public int get() {
+    return count;
   }
 
-  public int reset(){
-    return this.counter = 0;
+  public void reset() {
+    this.count = initialValue;
   }
 }

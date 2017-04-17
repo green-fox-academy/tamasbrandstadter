@@ -1,49 +1,72 @@
 public class Pirate {
-  private int toxicated;
-  private String name;
+  private int intoxicated;
   private boolean isHePassedOut;
   private boolean isHeDead;
+  private String name;
 
   public Pirate(String name) {
-    this.toxicated = 0;
-    this.name = name;
+    this.intoxicated = 0;
     this.isHePassedOut = false;
     this.isHeDead = false;
+    this.name = name;
   }
 
-  public boolean drinkSomeRum() {
-    if (die()) {
-      System.out.println("He's dead.");
-    } else {
-      toxicated++;
-    }
-    return true;
+  public void drinkSomeRum() {
+    this.intoxicated++;
+  }
+
+  public void drinkSomeRum(int randomConsume) {
+    this.intoxicated += randomConsume;
   }
 
   public void howsItGoingMate() {
-    if (toxicated < 4) {
-      System.out.println("Pour me anudder");
+    if (isHeDead == true) {
+      System.out.println("He is dead.");
+    } else if (isHePassedOut == true) {
+      System.out.println("He is passed out.");
+    } else if (intoxicated >= 0 && intoxicated <= 4) {
+      System.out.println("Pour me anudder!");
     }
-    if (die()) {
-      System.out.println("He's dead.");
-    } else {
+    if (intoxicated > 4) {
       System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
-      passOut();
+      isHePassedOut = true;
     }
   }
 
-  private boolean die() {
-    return isHeDead = true;
+  public void die() {
+    isHeDead = true;
   }
 
-  public boolean passOut() {
-    return isHePassedOut = true;
-  }
-
-  public void brawl(Pirate pirate) {
-    if (pirate.isHeDead) {
-
+  public void brawl(Pirate pirate, Pirate otherPirate) {
+    int randomNumber = (int) (Math.random() * 10) + 1;
+    if (!otherPirate.isHeDead) {
+      if (randomNumber >= 0 && randomNumber <= 3) {
+        pirate.isHeDead = true;
+        System.out.println("Pirate1 is dead.");
+      } else if (randomNumber >= 4 && randomNumber <= 7) {
+        otherPirate.isHeDead = true;
+        System.out.println("Pirate2 is dead");
+      } else {
+        pirate.isHePassedOut = true;
+        otherPirate.isHePassedOut = true;
+        System.out.println("They both passed out.");
+      }
     }
   }
 
+  public String getName() {
+    return name;
+  }
+
+  public int getIntoxicated() {
+    return intoxicated;
+  }
+
+  public boolean isHePassedOut() {
+    return isHePassedOut;
+  }
+
+  public boolean isHeDead() {
+    return isHeDead;
+  }
 }

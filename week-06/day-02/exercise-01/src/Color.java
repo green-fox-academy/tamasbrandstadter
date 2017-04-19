@@ -3,6 +3,5 @@ public enum Color {
 
   static Color returnColor() {
     return values()[(int) (Math.random() * values().length)];
-
   }
 }

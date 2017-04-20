@@ -33,7 +33,7 @@ public class TestBirthdayWithLocalDate {
   @Test
   public void testPrintMonthAndDay() throws Exception {
     String monthAndDay = birthdayCalculator.printMonthAndDay(EXPECTED_DATE);
-    assertEquals("11. 30.", monthAndDay);
+    assertEquals("04. 20.", monthAndDay);
   }
 
   @Test(expected = NullPointerException.class)

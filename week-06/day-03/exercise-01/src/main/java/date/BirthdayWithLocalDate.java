@@ -10,14 +10,13 @@ public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
   @Override
   public LocalDate parseDate(String str) {
     LocalDate ld = LocalDate.parse(str);
+    System.out.println(ld);
     return ld;
   }
 
   @Override
   public String printMonthAndDay(LocalDate date) {
-    // TODO - return the date formatted: month & day (MM. dd.)
-    return "";
-
+    return date.format(DateTimeFormatter.ofPattern("MM. dd."));
   }
 
   @Override

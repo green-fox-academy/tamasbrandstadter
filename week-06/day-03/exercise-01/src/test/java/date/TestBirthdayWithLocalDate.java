@@ -8,9 +8,9 @@ import java.time.format.DateTimeParseException;
 
 import static org.junit.Assert.assertEquals;
 
-public class TestBirthdayCalculatorWithLocalDate {
+public class TestBirthdayWithLocalDate {
 
-  private static final String EXPECTED_DATE_STR = "2016-11-30";
+  private static final String EXPECTED_DATE_STR = "2017-04-20";
   private static final LocalDate EXPECTED_DATE = LocalDate.parse(EXPECTED_DATE_STR, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
   private BirthdayCalculator<LocalDate> birthdayCalculator = new BirthdayWithLocalDate();

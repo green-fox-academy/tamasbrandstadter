@@ -21,8 +21,7 @@ public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
 
   @Override
   public boolean isAnniversaryToday(LocalDate date) {
-    LocalDate ld = LocalDate.now();
-    return ld.equals(date);
+    return LocalDate.now().getDayOfYear() == date.getDayOfYear();
   }
 
   @Override

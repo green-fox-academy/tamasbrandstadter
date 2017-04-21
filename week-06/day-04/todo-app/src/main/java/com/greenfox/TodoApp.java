@@ -13,14 +13,14 @@ class TodoApp {
     return PRINTUSAGE;
   }
 
-
   String printUsage() {
     return PRINTUSAGE;
   }
 
-
   String listTask(String[] args) {
-    return "No todos for today! :)";
+    if (args.length >= 0) {
+      return "No todos for today! :)";
+    }
+    return printUsage();
   }
-
 }

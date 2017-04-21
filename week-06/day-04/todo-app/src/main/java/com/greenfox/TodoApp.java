@@ -2,7 +2,7 @@ package com.greenfox;
 
 class TodoApp {
   static final String PRINTUSAGE = "Python Todo application\n" +
-          "=======================\n+" +
+          "=======================\n" +
           "Command line arguments:\n" +
           "-l   Lists all the tasks\n" +
           "-a   Adds a new task\n" +

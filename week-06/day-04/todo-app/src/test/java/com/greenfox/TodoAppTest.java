@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TodoAppTest {
   static String expectedOutput = "Python Todo application\n" +
-          "=======================\n+" +
+          "=======================\n" +
           "Command line arguments:\n" +
           "-l   Lists all the tasks\n" +
           "-a   Adds a new task\n" +

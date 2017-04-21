@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CommandObject extends Commands {
 
   CommandObject() {
-    super("s");
+    super("s", "w");
   }
 
   @Override
@@ -16,7 +16,6 @@ class CommandObject extends Commands {
   }
 }
 
-
 class CommandsTest {
 
   @Test
@@ -24,5 +23,4 @@ class CommandsTest {
     CommandObject commandObject = new CommandObject();
     assertEquals("s", commandObject.getArgument());
   }
-
 }

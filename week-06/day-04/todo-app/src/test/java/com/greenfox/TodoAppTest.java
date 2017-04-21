@@ -27,4 +27,11 @@ class TodoAppTest {
     String[] args = {};
     assertEquals(expectedOutput, todoApp.printUsageWithOutArgument(args));
   }
+
+  @Test
+  void printWithLArgument() {
+    TodoApp todoApp = new TodoApp();
+    String[] args = {"-l"};
+    assertEquals("No todos for today! :)", todoApp.listTask(args));
+  }
 }

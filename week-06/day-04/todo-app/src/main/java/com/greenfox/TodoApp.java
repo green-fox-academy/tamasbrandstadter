@@ -1,6 +1,6 @@
 package com.greenfox;
 
-public class TodoApp {
+class TodoApp {
   static final String PRINTUSAGE = "Python Todo application\n" +
           "=======================\n+" +
           "Command line arguments:\n" +
@@ -9,12 +9,18 @@ public class TodoApp {
           "-r   Removes an task\n" +
           "-c   Completes an task";
 
-  public String printUsageWithOutArgument(String[] args) {
+  String printUsageWithOutArgument(String[] args) {
     return PRINTUSAGE;
   }
 
 
-  public String printUsage() {
+  String printUsage() {
     return PRINTUSAGE;
   }
+
+
+  String listTask(String[] args) {
+    return "No todos for today! :)";
+  }
+
 }

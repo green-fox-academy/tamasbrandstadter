@@ -1,15 +1,15 @@
 public enum Color {
-    RED(1), BLACK(2);
+  RED(1), BLACK(2);
 
-    private final int value;
+  private final int value;
 
-    Color(int value) {
-        this.value = value;
-    }
+  Color(int value) {
+    this.value = value;
+  }
 
-    public int getValue() {
-        return value;
-    }
+  public int getValue() {
+    return value;
+  }
 }
 
 

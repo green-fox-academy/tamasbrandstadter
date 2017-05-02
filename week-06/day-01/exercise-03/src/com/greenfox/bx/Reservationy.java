@@ -1,9 +1,9 @@
 package com.greenfox.bx;
 
 public interface Reservationy {
-    String getDowBooking();
+  String getDowBooking();
 
-    String getCodeBooking();
+  String getCodeBooking();
 
-    String toString();
+  String toString();
 }

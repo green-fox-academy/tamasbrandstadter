@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class Greeting {
+class Greeting {
   long id;
   String content;
 }

@@ -1,15 +1,16 @@
 package main.java.music;
 
 public class Violin extends StringedInstrument {
-  String formatPlay;
+    private String formatElectricGuitarForPlay = "screeches";
 
-  public Violin() {
-    this.formatPlay = "Screech";
+    Violin() {
+        this.formatElectricGuitarForPlay = formatElectricGuitarForPlay;
+        super.name = "Violin";
+        super.numberOfStrings = 4;
+    }
 
-  }
-
-  @Override
-  void play() {
-
-  }
+    @Override
+    void play() {
+        System.out.printf(this.name + ", a " + this.numberOfStrings + "-stringed instrument that " + formatElectricGuitarForPlay + "\n");
+    }
 }

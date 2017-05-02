@@ -1,19 +1,22 @@
 package main.java.music;
 
-public class ElectricGuitar extends StringedInstrument {
-  String formatPlay;
+class ElectricGuitar extends StringedInstrument {
+    private String formatElectricGuitarForPlay = "twangs";
 
+    ElectricGuitar(int numberOfStrings) {
+        super.numberOfStrings = numberOfStrings;
+        super.name = "ElectricGuitar";
+        this.formatElectricGuitarForPlay = formatElectricGuitarForPlay;
+    }
 
-  public ElectricGuitar(String name, int numberOfStrings) {
-    super(name, numberOfStrings);
-    this.formatPlay = "twangs";
-  }
+    ElectricGuitar() {
+        super.name = "ElectricGuitar";
+        super.numberOfStrings = 6;
+        this.formatElectricGuitarForPlay = formatElectricGuitarForPlay;
+    }
 
-
-  @Override
-  void play() {
-    System.out.printf();
-
-
-  }
+    @Override
+    void play() {
+        System.out.printf(this.name + ", a " + this.numberOfStrings + "-stringed instrument that " + formatElectricGuitarForPlay + "\n");
+    }
 }

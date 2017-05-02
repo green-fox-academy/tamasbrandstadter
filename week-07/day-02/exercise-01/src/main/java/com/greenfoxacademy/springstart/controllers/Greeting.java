@@ -6,6 +6,6 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class Greeting {
-  private long id;
-  private String content;
+  long id;
+  String content;
 }

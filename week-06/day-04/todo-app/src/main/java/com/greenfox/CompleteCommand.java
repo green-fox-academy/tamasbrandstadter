@@ -1,13 +1,19 @@
 package com.greenfox;
 
-public class CompleteCommand extends Commands {
+import java.util.List;
 
-  public CompleteCommand() {
-    super("-c", "Completes a task");
+public class CompleteCommand extends Command {
+
+  CompleteCommand() {
+    super("-c", "Completes an task");
   }
 
   @Override
-  public String execute() {
-    return null;
+  public void execute(List<Task> task, String args) {
+    for (int i = 0; i < task.size(); i++) {
+      if (args.equals(task.get(i).getTaskDescription())) {
+        task.get(i).isDone();
+      }
+    }
   }
 }

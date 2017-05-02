@@ -1,13 +1,19 @@
 package com.greenfox;
 
-public class RemoveCommand extends Commands {
+import java.util.List;
 
-  public RemoveCommand() {
+public class RemoveCommand extends Command {
+
+  RemoveCommand() {
     super("-r", "Removes a task");
   }
 
   @Override
-  public String execute() {
-    return null;
+  public void execute(List<Task> task, String args) {
+    for (int i = 0; i < task.size(); i++) {
+      if (args.equals(task.get(i).getTaskDescription())) {
+        task.remove(task.get(i));
+      }
+    }
   }
 }

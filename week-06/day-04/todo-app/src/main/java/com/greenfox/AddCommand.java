@@ -1,13 +1,15 @@
 package com.greenfox;
 
-public class AddCommand extends Commands {
+import java.util.List;
 
-  public AddCommand() {
+public class AddCommand extends Command {
+
+  AddCommand() {
     super("-a", "Adds a new task");
   }
 
   @Override
-  public String execute() {
-    return null;
+  public void execute(List<Task> task, String args) {
+    task.add(new Task(args));
   }
 }

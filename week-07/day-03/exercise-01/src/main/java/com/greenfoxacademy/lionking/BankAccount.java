@@ -1,9 +1,9 @@
 package com.greenfoxacademy.lionking;
 
 public class BankAccount {
-  private String name;
-  private String balance;
-  private String animalType;
+  String name;
+  String balance;
+  String animalType;
 
   public BankAccount(String name, String balance, String animalType) {
     this.name = name;

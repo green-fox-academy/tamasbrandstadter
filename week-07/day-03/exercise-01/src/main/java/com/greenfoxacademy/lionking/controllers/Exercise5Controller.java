@@ -14,7 +14,7 @@ public class Exercise5Controller {
 
   @RequestMapping("/objects")
   public String exerciseDisplay(Model model) {
-    bankAccountList.add(new BankAccount("Pumba", "5000", "boar"));
+    bankAccountList.add(new BankAccount("Pumba", "5000", "king"));
     bankAccountList.add(new BankAccount("Timon", "6000", "meerkat"));
     bankAccountList.add(new BankAccount("Nala", "7000", "lion"));
     bankAccountList.add(new BankAccount("Rafiki", "8000", "mandrill"));

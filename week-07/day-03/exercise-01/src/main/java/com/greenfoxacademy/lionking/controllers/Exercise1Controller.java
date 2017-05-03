@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class Exercise1Controller {
-  private BankAccount bankAccount = new BankAccount("Simba", "2000", "lion");
+  private BankAccount bankAccount = new BankAccount("Simba", "2000", "lion", false);
 
   @RequestMapping("/account")
   public String showFields(Model model) {

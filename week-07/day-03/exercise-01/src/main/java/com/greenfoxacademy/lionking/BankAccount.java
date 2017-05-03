@@ -4,11 +4,13 @@ public class BankAccount {
   String name;
   String balance;
   String animalType;
+  boolean isHeBad;
 
-  public BankAccount(String name, String balance, String animalType) {
+  public BankAccount(String name, String balance, String animalType, boolean isHeBad) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
+    this.isHeBad = isHeBad;
   }
 
   public String getName() {

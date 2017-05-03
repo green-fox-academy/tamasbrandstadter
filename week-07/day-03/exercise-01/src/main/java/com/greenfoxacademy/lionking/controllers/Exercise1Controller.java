@@ -14,6 +14,7 @@ public class Exercise1Controller {
     model.addAttribute("name", bankAccount.getName());
     model.addAttribute("balance", bankAccount.getBalance());
     model.addAttribute("type", bankAccount.getAnimalType());
+    model.addAttribute("zebra", "zebra");
     return "account";
   }
 }

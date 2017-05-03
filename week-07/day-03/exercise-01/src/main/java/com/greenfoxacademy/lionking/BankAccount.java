@@ -24,6 +24,10 @@ public class BankAccount {
   public String getAnimalType() {
     return animalType;
   }
+
+  public boolean isHeBad() {
+    return isHeBad;
+  }
 }
 
 

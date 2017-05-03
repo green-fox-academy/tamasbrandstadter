@@ -5,6 +5,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<p th:text="'Hello, ' + ${name} + '! Account balance: ' + ${balance} + ' Animal type: ' + ${type}"></p>
+<p th:text="'Hello, ' + ${name} + '! Account balance: ' + ${#numbers.formatDecimal(balance,3,2,'COMMA')} + ' Animal type: ' + ${type}"></p>
 </body>
 </html>

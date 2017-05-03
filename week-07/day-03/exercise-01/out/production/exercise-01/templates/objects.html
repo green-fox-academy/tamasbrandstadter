@@ -9,8 +9,12 @@
 <p th:each="object : ${objects}">
     <span th:class="(${object.animalType} == 'king') ? kingclass : otherclass">
         <span th:text="${objectStat.index} + ' ' + ${object.getName()} + ' ' + ${object.getBalance()} + ' ' + ${object.animalType}"></span>
-        <span th:if="${object.isHeBad}">Bad Guy</span>
-        <span th:unless="${object.isHeBad}">Good Guy</span>
+        <!--<span th:if="${object.isHeBad()}">Bad Guy</span>-->
+        <!--<span th:unless="${object.isHeBad()}">Good Guy</span>-->
+
+        <span th:switch="${object.isHeBad()}"></span>
+        <span th:case="th.switch == true">Bad Guy</span>
+        <span th:case="th.switch == false}">Good Guy</span>
     </span>
 </p>
 </body>

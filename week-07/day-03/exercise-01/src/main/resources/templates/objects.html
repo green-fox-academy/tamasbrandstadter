@@ -11,6 +11,10 @@
         <span th:text="${objectStat.index} + ' ' + ${object.getName()} + ' ' + ${object.getBalance()} + ' ' + ${object.animalType}"></span>
         <span th:if="${object.isHeBad()}">Bad Guy</span>
         <span th:unless="${object.isHeBad()}">Good Guy</span>
+        <span th:switch="${object.isHeBad()}">
+            <span th:case="true">Bad Guy</span>
+            <span th:case="false">Good Guy</span>
+        </span>
     </span>
 </p>
 </body>

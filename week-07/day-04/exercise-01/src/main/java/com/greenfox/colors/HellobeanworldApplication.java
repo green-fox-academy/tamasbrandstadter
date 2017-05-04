@@ -1,4 +1,4 @@
-package com.greenfox;
+package com.greenfox.colors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -10,6 +10,9 @@ public class HellobeanworldApplication implements CommandLineRunner{
   @Autowired
   private HelloWorldApplication helloWorldApplication;
 
+  @Autowired
+  private MyColor myColor;
+
 	public static void main(String[] args) {
 		SpringApplication.run(HellobeanworldApplication.class, args);
   }
@@ -17,5 +20,6 @@ public class HellobeanworldApplication implements CommandLineRunner{
   @Override
   public void run(String... args) throws Exception {
     System.out.println(helloWorldApplication.getHelloWorld());
+    myColor.printColor();
   }
 }

@@ -1,4 +1,4 @@
-package com.greenfox;
+package com.greenfox.colors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

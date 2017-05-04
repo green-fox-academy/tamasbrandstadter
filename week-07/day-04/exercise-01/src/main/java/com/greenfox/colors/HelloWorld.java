@@ -1,4 +1,4 @@
-package com.greenfox;
+package com.greenfox.colors;
 
 class HelloWorld {
   private String message;

@@ -8,11 +8,11 @@ public class HelloWorldConfig {
 
   @Bean
   public HelloWorld helloWorld() {
-    return new HelloWorld(helloWorldApplication());
+    return new HelloWorld();
   }
 
   @Bean
   public HelloWorldApplication helloWorldApplication() {
-    return new HelloWorldApplication();
+    return new HelloWorldApplication(helloWorld());
   }
 }

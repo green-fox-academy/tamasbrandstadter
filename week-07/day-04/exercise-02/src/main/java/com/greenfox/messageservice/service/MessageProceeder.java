@@ -4,17 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class MessageProceeder {
   @Autowired
-  MessageService messageService;
-
-
-  public MessageProceeder() {
-    this.messageService = messageService;
-
-  }
+  private MessageService messageService;
 
   public void processMessage(String input, String email) {
     messageService.sendMessage(input, email);
   }
-
-
 }

@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MessageservicesApplication implements CommandLineRunner{
 	@Autowired
-  MessageProceeder messageProceeder;
+  private MessageProceeder messageProceeder;
 
 	public static void main(String[] args) {
 		SpringApplication.run(MessageservicesApplication.class, args);

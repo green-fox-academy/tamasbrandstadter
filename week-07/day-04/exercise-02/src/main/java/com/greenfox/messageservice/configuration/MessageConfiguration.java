@@ -17,12 +17,12 @@ public class MessageConfiguration {
   }
 
   @Bean
-  @Primary
   public MessageService emailService() {
     return new EmailService();
   }
 
   @Bean
+  @Primary
   public MessageService twitterService() {
     return new TwitterService();
   }

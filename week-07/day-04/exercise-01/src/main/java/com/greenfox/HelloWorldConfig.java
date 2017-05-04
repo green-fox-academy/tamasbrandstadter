@@ -1,0 +1,18 @@
+package com.greenfox;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class HelloWorldConfig {
+
+  @Bean
+  public HelloWorld helloWorld() {
+    return new HelloWorld(helloWorldApplication());
+  }
+
+  @Bean
+  public HelloWorldApplication helloWorldApplication() {
+    return new HelloWorldApplication();
+  }
+}

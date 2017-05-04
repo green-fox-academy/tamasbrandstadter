@@ -14,8 +14,11 @@
 <h1>
     Known tricks
 </h1>
-<ul>
-    <li th:each="trick : ${fox.trickList}" th:text="${trick}"> </li>
-</ul>
+<span th:if="${fox.getTrickListSize() == 0}">You know no tricks, yet. Go and learn some.</span>
+<span th:if="${fox.getTrickListSize() > 0}">
+    <ul>
+        <li th:each="trick : ${fox.trickList}" th:text="${trick}"> </li>
+    </ul>
+</span>
 </body>
 </html>

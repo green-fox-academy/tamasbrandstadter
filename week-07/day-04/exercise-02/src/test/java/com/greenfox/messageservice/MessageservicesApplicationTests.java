@@ -1,4 +1,4 @@
-package com.greenfox;
+package com.greenfox.messageservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

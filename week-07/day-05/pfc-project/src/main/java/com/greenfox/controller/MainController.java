@@ -14,15 +14,15 @@ public class MainController {
   Fox fox;
 
   @RequestMapping("/")
-  public String index(Model model){
+  public String index(Model model) {
     model.addAttribute("fox", fox);
     return "index";
   }
 
   @RequestMapping("/nutritionstore")
   public String nutritionStore(Model model) {
-    model.addAttribute("foodList", fox.getFoodArray());
-    model.addAttribute("drinkList", fox.getDrinkArray());
+    model.addAttribute("foodArray", fox.getFoodArray());
+    model.addAttribute("drinkArray", fox.getDrinkArray());
     return "nutritionstore";
   }
 
@@ -45,8 +45,4 @@ public class MainController {
     fox.removeTrick(trick);
     return "redirect:/";
   }
-
-
-
-
 }

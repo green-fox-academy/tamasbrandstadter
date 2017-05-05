@@ -49,11 +49,11 @@ public class Fox {
     return trickList;
   }
 
-  public void setFood(String food){
+  public void setFood(String food) {
     this.food = food;
   }
 
-  public void setDrink(String drink){
+  public void setDrink(String drink) {
     this.drink = drink;
   }
 
@@ -80,5 +80,4 @@ public class Fox {
   public int getToLearnTrickListSize() {
     return toLearnTrickList.size();
   }
-
 }

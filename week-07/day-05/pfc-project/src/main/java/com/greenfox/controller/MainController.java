@@ -32,4 +32,20 @@ public class MainController {
     fox.setDrink(drink);
     return "redirect:/";
   }
+
+  @RequestMapping("/trickcenter")
+  public String trickCenter(Model model) {
+    model.addAttribute("trickList", fox);
+    return "trickcenter";
+  }
+
+  @RequestMapping("/addtrick")
+  public String addTrick(@RequestParam String trick) {
+    fox.addTrick(trick);
+    return "redirect:/";
+  }
+
+
+
+
 }

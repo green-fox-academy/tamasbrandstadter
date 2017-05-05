@@ -11,20 +11,20 @@ import java.util.List;
 public class Fox {
   String name;
   List<String> trickList;
+  String[] toLearnTrickArray;
   String food;
   String drink;
   String[] foodArray;
   String[] drinkArray;
 
   public Fox() {
-    this.trickList = new ArrayList<>();
-    this.foodArray = new String[]{"meat", "bread"};
-    this.drinkArray = new String[]{"beer", "vodka"};
-    trickList.add("invisibility");
-    trickList.add("power");
     this.name = "Mr. Green";
     this.drink = "water";
     this.food = "salad";
+    this.trickList = new ArrayList<>();
+    this.toLearnTrickArray = new String[] {"invisibility"};
+    this.foodArray = new String[]{"meat", "bread"};
+    this.drinkArray = new String[]{"beer", "vodka"};
   }
 
   public int getTrickListSize() {
@@ -62,4 +62,13 @@ public class Fox {
   public String[] getDrinkArray() {
     return drinkArray;
   }
+
+  public String[] getToLearnTrickArray() {
+    return toLearnTrickArray;
+  }
+
+  public void addTrick(String trick) {
+    trickList.add(trick);
+  }
+
 }

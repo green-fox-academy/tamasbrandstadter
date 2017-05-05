@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li><a href="/">Information</a></li>
+    <li><a href="nutritionstore.html">Nutrition Store</a></li>
+    <li><a href="trickcenter.html">Trick Center</a></li>
+</ul>
+<p th:text="'Tricks'"></p>
+    <form action="/add">
+        <input list="trick" name="trick"/>
+            <datalist id="trick">
+                <option th:each="tricks : ${trickList.toLearnTrickArray}" th:value="${tricks}"/>
+            </datalist>
+        <input th:type="submit" value="Learn"/>
+    </form>
+</body>
+</html>

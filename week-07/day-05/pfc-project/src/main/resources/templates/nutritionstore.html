@@ -10,9 +10,17 @@
     <li><a href="nutritionstore.html">Nutrition Store</a></li>
 </ul>
 <p th:text="'Food'"></p>
-<input list="food" name="food"/>
-<datalist id="food">
-    <option th:each="foods : ${foodList}" th:value="${foods}"/>
-</datalist>
+    <form action="/changenutrition">
+    <input list="food" name="food"/>
+        <datalist id="food">
+            <option th:each="foods : ${foodList}" th:value="${foods}"/>
+        </datalist>
+<p th:text="'Drink'"></p>
+    <input list="drink" name="drink"/>
+        <datalist id="drink">
+            <option th:each="drinks : ${drinkList}" th:value="${drinks}"/>
+        </datalist>
+<input th:type="submit" value="Change"/>
+</form>
 </body>
 </html>

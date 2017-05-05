@@ -14,12 +14,12 @@ public class Fox {
   String food;
   String drink;
   String[] foodArray;
-  List<String> drinkList;
+  String[] drinkArray;
 
   public Fox() {
     this.trickList = new ArrayList<>();
     this.foodArray = new String[]{"meat", "bread"};
-    this.drinkList = new ArrayList<>();
+    this.drinkArray = new String[]{"beer", "vodka"};
     trickList.add("invisibility");
     trickList.add("power");
     this.name = "Mr. Green";
@@ -51,9 +51,15 @@ public class Fox {
     this.food = food;
   }
 
+  public void setDrink(String drink){
+    this.drink = drink;
+  }
+
   public String[] getFoodArray() {
     return foodArray;
   }
 
-
+  public String[] getDrinkArray() {
+    return drinkArray;
+  }
 }

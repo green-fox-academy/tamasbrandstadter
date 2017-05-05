@@ -50,11 +50,19 @@ public class Fox {
   }
 
   public void setFood(String food) {
-    this.food = food;
+    if (food.equals("")) {
+      this.food = "salad";
+    } else {
+      this.food = food;
+    }
   }
 
   public void setDrink(String drink) {
-    this.drink = drink;
+    if (drink.equals("")) {
+      this.drink = "water";
+    } else {
+      this.drink = drink;
+    }
   }
 
   public String[] getFoodArray() {

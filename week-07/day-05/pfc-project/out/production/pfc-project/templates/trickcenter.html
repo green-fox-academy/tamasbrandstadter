@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Title</title>
+    <title>Programmer Fox Club</title>
 </head>
 <body>
 <ul>
@@ -11,12 +11,12 @@
     <li><a href="trickcenter.html">Trick Center</a></li>
 </ul>
 <p th:text="'Tricks'"></p>
-    <span th:if="${trickList.getToLearnTrickListSize() == 0}">There are no tricks to learn.</span>
-    <span th:if="${trickList.getToLearnTrickListSize() > 0}">
+    <span th:if="${fox.getToLearnTrickListSize() == 0}">There are no tricks to learn.</span>
+    <span th:if="${fox.getToLearnTrickListSize() > 0}">
         <form action="/addtrick">
              <input list="trick" name="trick"/>
                 <datalist id="trick">
-                     <option th:each="tricks : ${trickList.toLearnTrickList}" th:value="${tricks}"/>
+                     <option th:each="tricks : ${fox.toLearnTrickList}" th:value="${tricks}"/>
                  </datalist>
              <input th:type="submit" value="Learn"/>
         </form>

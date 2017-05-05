@@ -17,4 +17,10 @@ public class MainController {
     model.addAttribute("fox", fox);
     return "index";
   }
+
+  @RequestMapping("/nutritionstore")
+  public String nutritionStore(Model model) {
+    model.addAttribute("foodList", fox.getFoodArray());
+    return "nutritionstore";
+  }
 }

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Programmer Fox Club</title>
+</head>
+<body>
+<ul>
+    <li><a href="/">Information</a></li>
+    <li><a href="nutritionstore.html">Nutrition Store</a></li>
+</ul>
+<p th:text="'Food'"></p>
+<input list="food" name="food"/>
+<datalist id="food">
+    <option th:each="foods : ${foodList}" th:value="${foods}"/>
+</datalist>
+</body>
+</html>

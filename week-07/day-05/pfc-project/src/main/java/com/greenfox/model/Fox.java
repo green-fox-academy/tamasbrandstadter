@@ -77,4 +77,8 @@ public class Fox {
     toLearnTrickList.remove(trick);
   }
 
+  public int getToLearnTrickListSize() {
+    return toLearnTrickList.size();
+  }
+
 }

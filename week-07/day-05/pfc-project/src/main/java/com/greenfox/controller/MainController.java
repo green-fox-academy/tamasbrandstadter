@@ -35,7 +35,7 @@ public class MainController {
 
   @RequestMapping("/trickcenter")
   public String trickCenter(Model model) {
-    model.addAttribute("trickList", fox);
+    model.addAttribute("fox", fox);
     return "trickcenter";
   }
 

@@ -11,12 +11,15 @@
     <li><a href="trickcenter.html">Trick Center</a></li>
 </ul>
 <p th:text="'Tricks'"></p>
-    <form action="/addtrick">
-        <input list="trick" name="trick"/>
-            <datalist id="trick">
-                <option th:each="tricks : ${trickList.toLearnTrickList}" th:value="${tricks}"/>
-            </datalist>
-        <input th:type="submit" value="Learn"/>
-    </form>
+    <span th:if="${trickList.getToLearnTrickListSize() == 0}">There are no tricks to learn.</span>
+    <span th:if="${trickList.getToLearnTrickListSize() > 0}">
+        <form action="/addtrick">
+             <input list="trick" name="trick"/>
+                <datalist id="trick">
+                     <option th:each="tricks : ${trickList.toLearnTrickList}" th:value="${tricks}"/>
+                 </datalist>
+             <input th:type="submit" value="Learn"/>
+        </form>
+    </span>
 </body>
 </html>

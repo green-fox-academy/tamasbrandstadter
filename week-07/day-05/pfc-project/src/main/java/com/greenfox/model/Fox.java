@@ -11,7 +11,7 @@ import java.util.List;
 public class Fox {
   String name;
   List<String> trickList;
-  String[] toLearnTrickArray;
+  List<String> toLearnTrickList;
   String food;
   String drink;
   String[] foodArray;
@@ -22,7 +22,9 @@ public class Fox {
     this.drink = "water";
     this.food = "salad";
     this.trickList = new ArrayList<>();
-    this.toLearnTrickArray = new String[] {"invisibility"};
+    this.toLearnTrickList = new ArrayList<>();
+    toLearnTrickList.add("invisibility");
+    toLearnTrickList.add("godmode");
     this.foodArray = new String[]{"meat", "bread"};
     this.drinkArray = new String[]{"beer", "vodka"};
   }
@@ -63,12 +65,16 @@ public class Fox {
     return drinkArray;
   }
 
-  public String[] getToLearnTrickArray() {
-    return toLearnTrickArray;
+  public List<String> getToLearnTrickList() {
+    return toLearnTrickList;
   }
 
   public void addTrick(String trick) {
     trickList.add(trick);
+  }
+
+  public void removeTrick(String trick) {
+    toLearnTrickList.remove(trick);
   }
 
 }

@@ -11,10 +11,10 @@
     <li><a href="trickcenter.html">Trick Center</a></li>
 </ul>
 <p th:text="'Tricks'"></p>
-    <form action="/add">
+    <form action="/addtrick">
         <input list="trick" name="trick"/>
             <datalist id="trick">
-                <option th:each="tricks : ${trickList.toLearnTrickArray}" th:value="${tricks}"/>
+                <option th:each="tricks : ${trickList.toLearnTrickList}" th:value="${tricks}"/>
             </datalist>
         <input th:type="submit" value="Learn"/>
     </form>

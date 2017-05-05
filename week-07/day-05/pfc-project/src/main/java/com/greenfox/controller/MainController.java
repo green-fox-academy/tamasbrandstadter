@@ -42,6 +42,7 @@ public class MainController {
   @RequestMapping("/addtrick")
   public String addTrick(@RequestParam String trick) {
     fox.addTrick(trick);
+    fox.removeTrick(trick);
     return "redirect:/";
   }
 

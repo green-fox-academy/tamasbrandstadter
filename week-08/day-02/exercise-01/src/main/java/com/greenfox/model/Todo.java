@@ -1,21 +1,26 @@
 package com.greenfox.model;
 
 import lombok.Getter;
-import org.springframework.stereotype.Component;
 
-@Component
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 @Getter
 public class Todo {
-  private long id;
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long id;
   private String title;
   private boolean isUrgent;
   private boolean isDone;
 
-  public Todo() {
+  public Todo() {}
 
-  }
-
-  public Todo(long id, String title) {
+  public Todo(Long id, String title) {
     this.id = id;
     this.title = title;
     this.isUrgent = false;

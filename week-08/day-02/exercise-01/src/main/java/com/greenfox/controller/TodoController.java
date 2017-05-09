@@ -1,26 +1,26 @@
 package com.greenfox.controller;
 
-import com.greenfox.repository.CrudRepository;
-import com.greenfox.model.Todo;
+import com.greenfox.model.TodoList;
+import com.greenfox.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.annotation.AccessType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/todo")
 public class TodoController {
+  private TodoRepository todoRepository;
 
   @Autowired
-  Todo todo;
-
-  @Autowired
-  CrudRepository crudRepository;
+  public TodoController(TodoRepository todoRepository) {
+    this.todoRepository = todoRepository;
+  }
 
   @RequestMapping(value = {"/", "/list"})
-  @ResponseBody
   public String list(Model model) {
-    return "This is my first todo";
+    model.addAttribute("todos", todoRepository.findAll());
+    return "todo";
   }
 }

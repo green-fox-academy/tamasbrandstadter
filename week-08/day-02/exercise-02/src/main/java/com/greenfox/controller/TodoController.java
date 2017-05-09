@@ -19,7 +19,8 @@ public class TodoController {
   }
 
   @RequestMapping(value = {"/", "/list"})
-  public String list(Model model) {
+  public String list(Model model, @RequestParam(value = "isActive", defaultValue = "false") String isActive) {
+    model.addAttribute("isActive", isActive);
     model.addAttribute("todos", todoRepository.findAll());
     return "todo";
   }

@@ -13,12 +13,18 @@
       <th>Done</th>
       <th>Urgent</th>
     </tr>
-    <tr th:each="todos : ${todos}">
-      <th th:text="${todos.id}"></th>
-      <th th:text="${todos.title}"></th>
-      <th th:text="${todos.isUrgent()}"></th>
-      <th th:text="${todos.isDone()}"></th>
-    </tr>
+
+      <div th:if="${isActive} == 'true'">
+        <tr th:each="todo : ${todos}">
+          <div th:if="${todo.isDone() == false}">
+            <th th:text="${todo.id}"></th>
+            <th th:text="${todo.title}"></th>
+            <th th:text="${todo.isUrgent()}"></th>
+            <th th:text="${todo.isDone()}"></th>
+          </div>
+        </tr>
+      </div>
+
   </table>
  <form th:action="@{/addTodo}" method="post">
    <input th:type="text" th:name="title"/>

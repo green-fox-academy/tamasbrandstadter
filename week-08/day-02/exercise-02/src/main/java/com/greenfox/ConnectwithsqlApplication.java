@@ -19,9 +19,9 @@ public class ConnectWithSqlApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		todoRepository.save(new Todo("I have to learn Object Relational Mapping", true, false));
-		todoRepository.save(new Todo("Finish H2 workshop", false, true));
-		todoRepository.save(new Todo("finish exercise", false, false));
+		todoRepository.save(new Todo("I have to learn Object Relational Mapping", false, false));
+		todoRepository.save(new Todo("Finish H2 workshop", false, false));
+		todoRepository.save(new Todo("finish exercise", true, true));
     todoRepository.save(new Todo("have some fun", true, true));
 	}
 }

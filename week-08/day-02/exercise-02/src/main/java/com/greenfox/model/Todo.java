@@ -20,7 +20,7 @@ public class Todo {
 
   public Todo() {}
 
-  public Todo(String title) {
+  public Todo(String title, boolean isUrgent, boolean isDone) {
     this.title = title;
     this.isUrgent = false;
     this.isDone = false;

@@ -13,11 +13,11 @@
       <th>Done</th>
       <th>Urgent</th>
     </tr>
-    <tr th:each="todos : ${todos}">
-      <th th:text="${todos.id}"></th>
-      <th th:text="${todos.title}"></th>
-      <th th:text="${todos.isUrgent()}"></th>
-      <th th:text="${todos.isDone()}"></th>
+    <tr th:each="list : ${todos}">
+      <th th:text="${list.id}"></th>
+      <th th:text="${list.title}"></th>
+      <th th:text="${list.isUrgent}"></th>
+      <th th:text="${list.isDone}"></th>
     </tr>
   </table>
  <form th:action="@{/addTodo}" method="post">

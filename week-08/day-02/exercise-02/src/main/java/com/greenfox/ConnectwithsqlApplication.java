@@ -8,19 +8,20 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ConnectwithsqlApplication implements CommandLineRunner{
+public class ConnectWithSqlApplication implements CommandLineRunner{
 
 	@Autowired
 	private TodoRepository todoRepository;
 
 	public static void main(String[] args) {
-		SpringApplication.run(ConnectwithsqlApplication.class, args);
+		SpringApplication.run(ConnectWithSqlApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
 		todoRepository.save(new Todo("I have to learn Object Relational Mapping", true, false));
 		todoRepository.save(new Todo("Finish H2 workshop", false, true));
-		todoRepository.save(new Todo("finish exercise", true, false));
+		todoRepository.save(new Todo("finish exercise", false, false));
+    todoRepository.save(new Todo("have some fun", true, true));
 	}
 }

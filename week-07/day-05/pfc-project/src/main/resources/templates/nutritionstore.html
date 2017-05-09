@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Programmer Fox Club</title>
+  <meta charset="UTF-8"/>
+  <title>Programmer Fox Club</title>
 </head>
 <body>
 <ul>
-    <li><a href="/">Information</a></li>
-    <li><a href="nutritionstore.html">Nutrition Store</a></li>
-    <li><a href="trickcenter.html">Trick Center</a></li>
+  <li><a href="/">Information</a></li>
+  <li><a href="nutritionstore.html">Nutrition Store</a></li>
+  <li><a href="trickcenter.html">Trick Center</a></li>
 </ul>
 <p th:text="'Food'"></p>
-    <form action="/changenutrition">
-        <input list="food" name="food"/>
-            <datalist id="food">
-                <option th:each="foods : ${foodArray}" th:value="${foods}"/>
-            </datalist>
+  <form action="/changenutrition">
+    <input list="food" name="food"/>
+      <datalist id="food">
+        <option th:each="foods : ${foodArray}" th:value="${foods}"/>
+          </datalist>
 <p th:text="'Drink'"></p>
-        <input list="drink" name="drink"/>
-            <datalist id="drink">
-                <option th:each="drinks : ${drinkArray}" th:value="${drinks}"/>
-            </datalist>
-        <input th:type="submit" value="Change"/>
-    </form>
+  <input list="drink" name="drink"/>
+    <datalist id="drink">
+      <option th:each="drinks : ${drinkArray}" th:value="${drinks}"/>
+        </datalist>
+  <input th:type="submit" value="Change"/>
+  </form>
 </body>
 </html>

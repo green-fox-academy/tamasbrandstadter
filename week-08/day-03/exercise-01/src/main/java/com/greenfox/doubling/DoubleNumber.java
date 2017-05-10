@@ -1,4 +1,4 @@
-package com.greenfox;
+package com.greenfox.doubling;
 
 import org.springframework.stereotype.Component;
 

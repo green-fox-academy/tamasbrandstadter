@@ -1,7 +1,7 @@
 package com.greenfoxacademy.springstart;
 
 public class Hello {
-  String greet;
+  private String greet;
 
   public Hello(String greet) {
     this.greet = greet;

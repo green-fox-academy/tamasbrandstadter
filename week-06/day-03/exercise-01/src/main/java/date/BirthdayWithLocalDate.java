@@ -26,7 +26,7 @@ public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
 
   @Override
   public int calculateAgeInYears(LocalDate birthday) {
-    return  birthday.getYear() - LocalDate.now().getYear();
+    return LocalDate.now().getYear() -  birthday.getYear();
   }
 
   @Override

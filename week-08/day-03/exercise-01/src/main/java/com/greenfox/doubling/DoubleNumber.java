@@ -12,7 +12,7 @@ public class DoubleNumber {
     this.result = result;
   }
 
-  public int getRecieved() {
+  public int getReceived() {
     return received;
   }
 

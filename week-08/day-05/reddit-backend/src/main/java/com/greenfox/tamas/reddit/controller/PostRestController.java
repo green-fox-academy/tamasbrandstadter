@@ -40,4 +40,11 @@ public class PostRestController {
     postRepository.save(post);
     return post;
   }
+
+  @DeleteMapping(value = "/posts/{id}")
+  public Post deletePost(@PathVariable("id") Long id) {
+    Post post = postRepository.findOne(id);
+    postRepository.delete(id);
+    return post;
+  }
 }

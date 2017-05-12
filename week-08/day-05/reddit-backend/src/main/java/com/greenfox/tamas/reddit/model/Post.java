@@ -60,6 +60,10 @@ public class Post {
     this.score += 1;
   }
 
+  public void downScore() {
+    this.score -= 1;
+  }
+
   public Timestamp getTimeStamp() {
     return timeStamp;
   }

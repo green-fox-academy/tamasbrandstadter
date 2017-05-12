@@ -32,4 +32,12 @@ public class PostRestController {
     postRepository.save(post);
     return post;
   }
+
+  @PutMapping(value = "/posts/{id}/downvote")
+  public Post downVotePost(@PathVariable("id") Long id) {
+    Post post = postRepository.findOne(id);
+    post.downScore();
+    postRepository.save(post);
+    return post;
+  }
 }

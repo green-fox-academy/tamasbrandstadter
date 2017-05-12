@@ -47,4 +47,15 @@ public class PostRestController {
     postRepository.delete(id);
     return post;
   }
+
+  @PutMapping(value = "/posts/{id}")
+  public Post updatePost(@PathVariable("id") Long id, @RequestBody Post inputPost) {
+    Post post = postRepository.findOne(id);
+    String href = inputPost.getHref();
+    String title = inputPost.getTitle();
+    post.setHref(href);
+    post.setTitle(title);
+    postRepository.save(post);
+    return post;
+  }
 }

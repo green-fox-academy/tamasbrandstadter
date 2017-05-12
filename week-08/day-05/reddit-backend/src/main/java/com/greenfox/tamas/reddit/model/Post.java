@@ -14,10 +14,18 @@ public class Post {
   String title;
   String href;
   int score;
-  Timestamp timestamp;
+  Timestamp timeStamp;
 
   public Post() {
+    this.timeStamp = new Timestamp(System.currentTimeMillis() / 1000);
+    this.score = 0;
+  }
 
+  public Post(String title, String href){
+    this.title = title;
+    this.href = href;
+    this.score = 0;
+    this.timeStamp = new Timestamp(System.currentTimeMillis() / 1000);
   }
 
   public Long getId() {
@@ -52,11 +60,11 @@ public class Post {
     this.score = score;
   }
 
-  public Timestamp getTimestamp() {
-    return timestamp;
+  public Timestamp getTimeStamp() {
+    return timeStamp;
   }
 
-  public void setTimestamp(Timestamp timestamp) {
-    this.timestamp = timestamp;
+  public void setTimeStamp(Timestamp timeStamp) {
+    this.timeStamp = timeStamp;
   }
 }

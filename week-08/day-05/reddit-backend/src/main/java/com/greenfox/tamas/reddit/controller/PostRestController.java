@@ -24,4 +24,12 @@ public class PostRestController {
     postRepository.save(post);
     return post;
   }
+
+  @PutMapping(value = "/posts/{id}/upvote")
+  public Post upVotePost(@PathVariable("id") Long id) {
+    Post post = postRepository.findOne(id);
+    post.setScore();
+    postRepository.save(post);
+    return post;
+  }
 }

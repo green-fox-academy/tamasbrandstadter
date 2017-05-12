@@ -21,7 +21,7 @@ public class Post {
     this.score = 0;
   }
 
-  public Post(String title, String href){
+  public Post(String title, String href) {
     this.title = title;
     this.href = href;
     this.score = 0;
@@ -56,8 +56,8 @@ public class Post {
     return score;
   }
 
-  public void setScore(int score) {
-    this.score = score;
+  public void setScore() {
+    this.score += 1;
   }
 
   public Timestamp getTimeStamp() {

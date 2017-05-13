@@ -7,35 +7,35 @@
 <body>
 <h1>Todos for today:</h1>
 <a href="add.html">Add new todo</a>
-  <table>
-    <tr>
-      <th>Id</th>
-      <th>Action</th>
-      <th>Done</th>
-      <th>Urgent</th>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Action</th>
+    <th>Done</th>
+    <th>Urgent</th>
+  </tr>
+  <div th:if="${isActive} == 'true'">
+    <tr th:each="todo : ${todos}">
+      <div th:if="${todo.isDone() == false}">
+        <td th:style="|border : 1px solid|" th:text="${todo.id}"></td>
+        <td th:style="|border : 1px solid|" th:text="${todo.title}"></td>
+        <td th:style="|border : 1px solid|" th:text="${todo.isUrgent()}"></td>
+        <td th:style="|border : 1px solid|" th:text="${todo.isDone()}"></td>
+        <td th:style="|border : 1px solid|"><a th:href="@{/__${todo.id}__/delete}" th:text='Delete'></a></td>
+        <td th:style="|border : 1px solid|"><a th:href="@{/__${todo.id}__/edit}" th:text='Edit'></a></td>
+      </div>
     </tr>
-      <div th:if="${isActive} == 'true'">
-        <tr th:each="todo : ${todos}">
-          <div th:if="${todo.isDone() == false}">
-            <td th:style="|border : 1px solid|" th:text="${todo.id}"></td>
-            <td th:style="|border : 1px solid|" th:text="${todo.title}"></td>
-            <td th:style="|border : 1px solid|" th:text="${todo.isUrgent()}"></td>
-            <td th:style="|border : 1px solid|" th:text="${todo.isDone()}"></td>
-            <td th:style="|border : 1px solid|"><a th:href="@{/__${todo.id}__/delete}" th:text='Delete'></a></td>
-            <td th:style="|border : 1px solid|"><a th:href="@{/__${todo.id}__/edit}" th:text='Edit'></a></td>
-          </div>
-        </tr>
-      </div>
-      <div th:if="${isActive} == 'false'">
-         <tr th:each="todo : ${todos}">
-           <td th:style="|border : 1px solid|" th:text="${todo.id}"></td>
-           <td th:style="|border : 1px solid|" th:text="${todo.title}"></td>
-           <td th:style="|border : 1px solid|" th:text="${todo.isUrgent()}"></td>
-           <td th:style="|border : 1px solid|" th:text="${todo.isDone()}"></td>
-           <td th:style="|border : 1px solid|"><a th:href="@{/__${todo.id}__/delete}" th:text='Delete'></a></td>
-           <td th:style="|border : 1px solid|"><a th:href="@{/__${todo.id}__/edit}" th:text='Edit'></a></td>
-         </tr>
-      </div>
-  </table>
+  </div>
+  <div th:if="${isActive} == 'false'">
+    <tr th:each="todo : ${todos}">
+      <td th:style="|border : 1px solid|" th:text="${todo.id}"></td>
+      <td th:style="|border : 1px solid|" th:text="${todo.title}"></td>
+      <td th:style="|border : 1px solid|" th:text="${todo.isUrgent()}"></td>
+      <td th:style="|border : 1px solid|" th:text="${todo.isDone()}"></td>
+      <td th:style="|border : 1px solid|"><a th:href="@{/__${todo.id}__/delete}" th:text='Delete'></a></td>
+      <td th:style="|border : 1px solid|"><a th:href="@{/__${todo.id}__/edit}" th:text='Edit'></a></td>
+    </tr>
+  </div>
+</table>
 </body>
 </html>

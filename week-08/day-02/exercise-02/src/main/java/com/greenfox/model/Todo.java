@@ -18,7 +18,8 @@ public class Todo {
   private boolean isUrgent;
   private boolean isDone;
 
-  public Todo() {}
+  public Todo() {
+  }
 
   public Todo(String title, boolean isUrgent, boolean isDone) {
     this.id = id;

@@ -49,11 +49,20 @@ public class TodoController {
 
   @PostMapping(value = "/{id}/edit/update")
   public String finishedEdit(@PathVariable("id") Long id, @RequestParam("title") String title,
-                             @RequestParam("urgent") boolean urgent, @RequestParam("done") boolean done) {
+                             @RequestParam(value = "urgent", defaultValue = "unchecked") String urgent,
+                             @RequestParam(value = "done", defaultValue = "unchecked") String done) {
     Todo updatedTodo = todoRepository.findOne(id);
     updatedTodo.setTitle(title);
-    updatedTodo.setDone(done);
-    updatedTodo.setUrgent(urgent);
+    if (urgent.equals("checked")) {
+      updatedTodo.setUrgent(true);
+    } else {
+      updatedTodo.setUrgent(false);
+    }
+    if (done.equals("checked")) {
+      updatedTodo.setDone(true);
+    } else {
+      updatedTodo.setDone(false);
+    }
     todoRepository.save(updatedTodo);
     return "redirect:/";
   }

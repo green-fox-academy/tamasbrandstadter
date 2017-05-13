@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1>Todos for today:</h1>
+<a href="add.html">Add new todo</a>
   <table>
     <tr>
       <th>Id</th>
@@ -32,9 +33,5 @@
          </tr>
       </div>
   </table>
- <form th:action="@{/addTodo}" method="post">
-   <input th:type="text" th:name="title"/>
-   <input th:type="submit"/>
- </form>
 </body>
 </html>

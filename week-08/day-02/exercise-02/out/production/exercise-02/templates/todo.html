@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1>Todos for today:</h1>
+<a href="add.html">Add new todo</a>
   <table>
     <tr>
       <th>Id</th>
@@ -13,7 +14,6 @@
       <th>Done</th>
       <th>Urgent</th>
     </tr>
-
       <div th:if="${isActive} == 'true'">
         <tr th:each="todo : ${todos}">
           <div th:if="${todo.isDone() == false}">
@@ -24,11 +24,14 @@
           </div>
         </tr>
       </div>
-
+      <div th:if="${isActive} == 'false'">
+         <tr th:each="todo : ${todos}">
+           <th th:text="${todo.id}"></th>
+           <th th:text="${todo.title}"></th>
+           <th th:text="${todo.isUrgent()}"></th>
+           <th th:text="${todo.isDone()}"></th>
+         </tr>
+      </div>
   </table>
- <form th:action="@{/addTodo}" method="post">
-   <input th:type="text" th:name="title"/>
-   <input th:type="submit"/>
- </form>
 </body>
 </html>

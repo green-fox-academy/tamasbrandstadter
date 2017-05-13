@@ -5,11 +5,11 @@ import com.greenfox.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/todo")
 public class TodoController {
   private TodoRepository todoRepository;
 
@@ -18,17 +18,22 @@ public class TodoController {
     this.todoRepository = todoRepository;
   }
 
-  @RequestMapping(value = {"/", "/list"})
+  @GetMapping(value = {"/", "/list"})
   public String list(Model model, @RequestParam(value = "isActive", defaultValue = "false") String isActive) {
     model.addAttribute("isActive", isActive);
     model.addAttribute("todos", todoRepository.findAll());
     return "todo";
   }
 
-  @RequestMapping(value = "/addTodo")
-  public String addTodo(Model model, @RequestParam("title") String title) {
-    todoRepository.save(new Todo(title, false, false));
+  @GetMapping(value = "/add")
+  public String add() {
+    return "add";
+  }
+
+  @PostMapping(value = "/add/create")
+  public String create(Model model, @RequestParam("title") String title) {
     model.addAttribute("title", todoRepository.findAll());
-    return "redirect:/todo";
+    todoRepository.save(new Todo(title, false, false));
+    return "redirect:/";
   }
 }

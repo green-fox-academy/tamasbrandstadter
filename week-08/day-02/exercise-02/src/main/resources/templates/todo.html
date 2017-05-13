@@ -22,6 +22,7 @@
             <td th:style="|border : 1px solid|" th:text="${todo.isUrgent()}"></td>
             <td th:style="|border : 1px solid|" th:text="${todo.isDone()}"></td>
             <td th:style="|border : 1px solid|"><a th:href="@{/__${todo.id}__/delete}" th:text='Delete'></a></td>
+            <td th:style="|border : 1px solid|"><a th:href="@{/__${todo.id}__/edit}" th:text='Edit'></a></td>
           </div>
         </tr>
       </div>
@@ -32,6 +33,7 @@
            <td th:style="|border : 1px solid|" th:text="${todo.isUrgent()}"></td>
            <td th:style="|border : 1px solid|" th:text="${todo.isDone()}"></td>
            <td th:style="|border : 1px solid|"><a th:href="@{/__${todo.id}__/delete}" th:text='Delete'></a></td>
+           <td th:style="|border : 1px solid|"><a th:href="@{/__${todo.id}__/edit}" th:text='Edit'></a></td>
          </tr>
       </div>
   </table>

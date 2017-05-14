@@ -9,7 +9,7 @@ public class LogList {
   private Iterable<Log> entries;
   private int entryCount;
 
-  public LogList(){
+  public LogList() {
     this.entries = new ArrayList<>();
     this.entryCount = 0;
   }

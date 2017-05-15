@@ -19,4 +19,8 @@ public class CalorieTable {
   public void setFoodList(List<Food> foodList) {
     this.foodList = foodList;
   }
+
+  public void addToTable(Food food) {
+    foodList.add(food);
+  }
 }

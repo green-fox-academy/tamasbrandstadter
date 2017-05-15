@@ -33,9 +33,9 @@ public class CalorieTable {
     }
   }
 
-  public Food findFood(String foodname) {
+  public Food findFood(String foodName) {
     for (Food food : foodList) {
-      if (food.getName().equals(foodname)) {
+      if (food.getName().equals(foodName)) {
         return food;
       }
     }

@@ -7,14 +7,14 @@ public class Ship {
   private int caliber25;
   private int caliber30;
   private int caliber50;
-  private String shipStatus;
+  private double shipStatus;
   private boolean ready;
 
   public Ship() {
     this.caliber25 = 0;
     this.caliber30 = 0;
     this.caliber50 = 0;
-    this.shipStatus = "empty";
+    this.shipStatus = 0;
     this.ready = false;
   }
 
@@ -42,12 +42,12 @@ public class Ship {
     this.caliber50 = caliber50;
   }
 
-  public String getShipStatus() {
+  public double getShipStatus() {
     return shipStatus;
   }
 
-  public void setShipStatus(String shipStatus) {
-    this.shipStatus = shipStatus;
+  public void setShipStatus(double shipStatus) {
+    this.shipStatus += shipStatus / 12500;
   }
 
   public boolean isReady() {

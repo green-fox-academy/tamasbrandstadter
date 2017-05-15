@@ -33,7 +33,7 @@ public class Cargo {
   }
 
   public void setShipStatus(double shipStatus) {
-    this.shipStatus = shipStatus;
+    this.shipStatus = shipStatus / 12500;
   }
 
   public boolean isReady() {

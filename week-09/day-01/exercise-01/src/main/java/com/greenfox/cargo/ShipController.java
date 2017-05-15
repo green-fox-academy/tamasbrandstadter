@@ -20,21 +20,24 @@ public class ShipController {
   public Cargo fillCargo(@RequestParam("caliber") String caliber, @RequestParam("amount") int amount) {
     int maxShipCargo = 12500;
     Cargo cargo = new Cargo(caliber, amount);
-    cargo.setShipStatus(amount/maxShipCargo);
-    ship.setShipStatus("40%");
     if (caliber.equals(".50")) {
+      cargo.setShipStatus(amount);
+      ship.setShipStatus(amount);
       ship.setCaliber50(amount + ship.getCaliber50());
-      cargo.setShipStatus(amount / maxShipCargo);
     }
     if (caliber.equals(".25")) {
+      cargo.setShipStatus(amount);
+      ship.setShipStatus(amount);
       ship.setCaliber25(amount + ship.getCaliber25());
     }
     if (caliber.equals(".30")) {
+      cargo.setShipStatus(amount);
+      ship.setShipStatus(amount);
       ship.setCaliber30(amount + ship.getCaliber30());
     }
     if (ship.getCaliber25() + ship.getCaliber30() + ship.getCaliber50() == maxShipCargo) {
+      ship.setShipStatus(100);
       ship.setReady(true);
-      ship.setShipStatus("100%");
       cargo.setShipStatus(100);
       cargo.setReady(true);
     }

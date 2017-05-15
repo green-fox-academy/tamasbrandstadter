@@ -41,4 +41,10 @@ public class YonduControllerTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$.speed").value("10.0"))
             .andExpect(status().isOk());
   }
+
+  @Test
+  public void testWithOutParameter() throws Exception {
+    mockMvc.perform(get("/yondu"))
+            .andExpect(status().is4xxClientError());
+  }
 }

@@ -17,20 +17,20 @@ public class FoodRestController {
     return calorieTable;
   }
 
-  @PostMapping("/add")
+  @PostMapping("/drax/add")
   public CalorieTable addToTable(@RequestParam("name") String name, @RequestParam("amount") int amount,
                                  @RequestParam("calorie") double calorie) {
     calorieTable.addToTable(new Food(name, amount, calorie));
     return calorieTable;
   }
 
-  @DeleteMapping("/remove")
+  @DeleteMapping("/drax/remove")
   public CalorieTable deleteFromTable(@RequestBody Food food) {
     calorieTable.deleteFromTable(food.getName());
     return calorieTable;
   }
 
-  @PutMapping("/change")
+  @PutMapping("/drax/change")
   public CalorieTable updateAmount(@RequestParam("foodname") String name, @RequestParam("amount") int amount) {
     calorieTable.findFood(name).setAmount(amount);
     return calorieTable;

@@ -2,7 +2,6 @@ package com.greenfox.calorietable;
 
 import org.springframework.stereotype.Component;
 
-@Component
 public class Food {
   private String name;
   private int amount;

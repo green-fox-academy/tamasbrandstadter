@@ -32,4 +32,13 @@ public class CalorieTable {
       }
     }
   }
+
+  public Food findFood(String foodname) {
+    for (Food food : foodList) {
+      if (food.getName().equals(foodname)) {
+        return food;
+      }
+    }
+    return null;
+  }
 }

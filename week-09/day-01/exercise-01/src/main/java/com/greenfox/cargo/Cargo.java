@@ -1,15 +1,12 @@
 package com.greenfox.cargo;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Cargo {
   private String received;
   private double amount;
   private double shipStatus;
   private boolean ready;
 
-  public Cargo(String received, int amount) {
+  public Cargo(String received, double amount) {
     this.received = received;
     this.amount = amount;
     this.ready = false;
@@ -35,8 +32,8 @@ public class Cargo {
     return shipStatus;
   }
 
-  public void setShipStatus(double shipStatus) {
-    this.shipStatus = shipStatus / 12500;
+  public void setStatus(double status) {
+    this.shipStatus = status / 12500;
   }
 
   public boolean isReady() {

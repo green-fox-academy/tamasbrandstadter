@@ -1,5 +1,6 @@
 package com.greenfox.cargo;
 
+import com.greenfox.ErrorMessage;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,6 +37,29 @@ public class ShipControllerTest {
   public void testWithEmptyShip() throws Exception {
     mockMvc.perform(get("/rocket"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.shipStatus").value("0.0"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.ready").value("false"))
             .andExpect(status().isOk());
+  }
+
+  @Test
+  public void testWithLoadedShip() throws Exception {
+    mockMvc.perform(get("/rocket/fill?caliber=.50&amount=5000"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.shipStatus").value("0.4"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.ready").value("false"))
+            .andExpect(status().isOk());
+  }
+
+  @Test
+  public void testWithFullShip() throws Exception {
+    mockMvc.perform(get("/rocket/fill?caliber=.50&amount=12500"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.shipStatus").value("1.0"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.ready").value("true"))
+            .andExpect(status().isOk());
+  }
+
+  @Test
+  public void testWithOutParameter() throws Exception {
+    mockMvc.perform(get("/rocket/fill"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.error").value("Missing parameter."));
   }
 }

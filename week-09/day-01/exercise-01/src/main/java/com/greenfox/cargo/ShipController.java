@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ShipController {
 
-  @Autowired
-  private Ship ship;
+  private Ship ship = new Ship();
 
   @GetMapping("/rocket")
   public Ship listCargo() {

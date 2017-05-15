@@ -1,5 +1,8 @@
 package com.greenfox.cargo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Cargo {
   private String received;
   private double amount;

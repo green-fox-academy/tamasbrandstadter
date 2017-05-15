@@ -1,8 +1,5 @@
 package com.greenfox.cargo;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Ship {
   private double caliber25;
   private double caliber30;

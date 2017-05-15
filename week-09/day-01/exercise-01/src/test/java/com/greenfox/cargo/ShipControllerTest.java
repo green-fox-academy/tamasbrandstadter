@@ -22,7 +22,6 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 @WebAppConfiguration
 @EnableWebMvc
 public class ShipControllerTest {
-
   private MockMvc mockMvc;
 
   @Autowired
@@ -36,7 +35,7 @@ public class ShipControllerTest {
   @Test
   public void testWithEmptyShip() throws Exception {
     mockMvc.perform(get("/rocket"))
-            .andExpect(MockMvcResultMatchers.jsonPath("$.shipStatus").value("0.0"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.shipStatus").value("empty"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.ready").value("false"))
             .andExpect(status().isOk());
   }
@@ -44,7 +43,7 @@ public class ShipControllerTest {
   @Test
   public void testWithLoadedShip() throws Exception {
     mockMvc.perform(get("/rocket/fill?caliber=.50&amount=5000"))
-            .andExpect(MockMvcResultMatchers.jsonPath("$.shipStatus").value("0.4"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.shipStatus").value("40%"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.ready").value("false"))
             .andExpect(status().isOk());
   }
@@ -52,7 +51,7 @@ public class ShipControllerTest {
   @Test
   public void testWithFullShip() throws Exception {
     mockMvc.perform(get("/rocket/fill?caliber=.50&amount=12500"))
-            .andExpect(MockMvcResultMatchers.jsonPath("$.shipStatus").value("1.0"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.shipStatus").value("full"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.ready").value("true"))
             .andExpect(status().isOk());
   }

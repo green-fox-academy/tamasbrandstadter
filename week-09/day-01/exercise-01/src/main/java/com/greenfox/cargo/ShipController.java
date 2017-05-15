@@ -21,18 +21,18 @@ public class ShipController {
     int maxShipCargo = 12500;
     Cargo cargo = new Cargo(caliber, amount);
     if (caliber.equals(".50")) {
-      cargo.setShipStatus(amount);
       ship.setShipStatus(amount);
+      cargo.setShipStatus(amount);
       ship.setCaliber50(amount + ship.getCaliber50());
     }
     if (caliber.equals(".25")) {
-      cargo.setShipStatus(amount);
       ship.setShipStatus(amount);
+      cargo.setShipStatus(amount);
       ship.setCaliber25(amount + ship.getCaliber25());
     }
     if (caliber.equals(".30")) {
-      cargo.setShipStatus(amount);
       ship.setShipStatus(amount);
+      cargo.setShipStatus(amount);
       ship.setCaliber30(amount + ship.getCaliber30());
     }
     if (ship.getCaliber25() + ship.getCaliber30() + ship.getCaliber50() == maxShipCargo) {

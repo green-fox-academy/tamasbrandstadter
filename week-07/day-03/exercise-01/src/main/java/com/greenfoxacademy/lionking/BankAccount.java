@@ -5,12 +5,14 @@ public class BankAccount {
   String balance;
   String animalType;
   boolean isHeBad;
+  int zebraNumbers;
 
   public BankAccount(String name, String balance, String animalType, boolean isHeBad) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
     this.isHeBad = isHeBad;
+    this.zebraNumbers = 0;
   }
 
   public String getName() {
@@ -27,6 +29,14 @@ public class BankAccount {
 
   public boolean isHeBad() {
     return isHeBad;
+  }
+
+  public int getZebraNumbers() {
+    return zebraNumbers;
+  }
+
+  public void setZebraNumbers() {
+    this.zebraNumbers += 10;
   }
 }
 

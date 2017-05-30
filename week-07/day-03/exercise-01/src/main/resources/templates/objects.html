@@ -1,21 +1,26 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Serving Web Content</title>
-    <link rel="stylesheet" th:href="@{/style.css}"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Getting Started: Serving Web Content</title>
+  <link rel="stylesheet" th:href="@{/style.css}"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<p th:each="object : ${objects}">
-    <span th:class="(${object.animalType} == 'king') ? kingclass : otherclass">
-        <span th:text="${objectStat.index} + ' ' + ${object.getName()} + ' ' + ${object.getBalance()} + ' ' + ${object.animalType}"></span>
-        <span th:if="${object.isHeBad()}">Bad Guy</span>
-        <span th:unless="${object.isHeBad()}">Good Guy</span>
-        <span th:switch="${object.isHeBad()}">
-            <span th:case="true">Bad Guy</span>
-            <span th:case="false">Good Guy</span>
-        </span>
-    </span>
-</p>
+  <table>
+    <tr th:each="object : ${objects}" th:class="(${object.animalType} == 'king') ? kingclass : otherclass">
+      <td th:text="${objectStat.index}"></td>
+      <td th:text="${object.getName()}"></td>
+      <td th:text="${object.getBalance()}"></td>
+      <td th:text="${object.animalType}"></td>
+      <td th:if="${object.isHeBad()}">Bad Guy</td>
+      <td th:unless="${object.isHeBad()}">Good Guy</td>
+      <td th:text="${object.getZebraNumbers()}"></td>
+      <td>
+        <form th:method="add" th:object="${object}" th:action="@{/objects/add}">
+          <button th:type="submit">Add</button>
+        </form>
+      </td>
+    </tr>
+  </table>
 </body>
 </html>

@@ -1,31 +1,33 @@
 package com.greenfox.tamas.reddit.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
 public class Post {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  Long id;
-  String title;
-  String href;
-  int score;
-  Timestamp timeStamp;
+  private Long id;
+  private String title;
+  private String href;
+  private int score;
+  private Timestamp timeStamp;
+
+  @ManyToOne
+  @JoinColumn(name = "username")
+  private User owner;
 
   public Post() {
-    this.timeStamp = new Timestamp(System.currentTimeMillis() / 1000);
+    this.timeStamp = new Timestamp(System.currentTimeMillis());
     this.score = 0;
   }
 
-  public Post(String title, String href) {
+  public Post(String title, String href, User owner) {
     this.title = title;
     this.href = href;
     this.score = 0;
-    this.timeStamp = new Timestamp(System.currentTimeMillis() / 1000);
+    this.timeStamp = new Timestamp(System.currentTimeMillis());
+    this.owner = owner;
   }
 
   public Long getId() {
@@ -57,11 +59,11 @@ public class Post {
   }
 
   public void setScore() {
-    this.score += 1;
+    this.score++;
   }
 
   public void downScore() {
-    this.score -= 1;
+    this.score--;
   }
 
   public Timestamp getTimeStamp() {
@@ -70,5 +72,13 @@ public class Post {
 
   public void setTimeStamp(Timestamp timeStamp) {
     this.timeStamp = timeStamp;
+  }
+
+  public User getOwner() {
+    return owner;
+  }
+
+  public void setOwner(User owner) {
+    this.owner = owner;
   }
 }

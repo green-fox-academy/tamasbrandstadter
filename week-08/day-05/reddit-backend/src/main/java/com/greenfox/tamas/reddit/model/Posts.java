@@ -3,7 +3,7 @@ package com.greenfox.tamas.reddit.model;
 import java.util.ArrayList;
 
 public class Posts {
-  Iterable<Post> posts;
+  private Iterable<Post> posts;
 
   public Posts() {
     this.posts = new ArrayList<>();

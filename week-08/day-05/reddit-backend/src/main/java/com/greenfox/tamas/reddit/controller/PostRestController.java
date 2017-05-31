@@ -2,16 +2,25 @@ package com.greenfox.tamas.reddit.controller;
 
 import com.greenfox.tamas.reddit.model.Post;
 import com.greenfox.tamas.reddit.model.Posts;
+import com.greenfox.tamas.reddit.model.User;
 import com.greenfox.tamas.reddit.services.PostRepository;
+import com.greenfox.tamas.reddit.services.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin("*")
 public class PostRestController {
+  private final PostRepository postRepository;
+  private final UserRepository userRepository;
+  private Posts posts;
 
   @Autowired
-  private PostRepository postRepository;
-  private Posts posts = new Posts();
+  public PostRestController(PostRepository postRepository, UserRepository userRepository) {
+    this.postRepository = postRepository;
+    this.userRepository = userRepository;
+    this.posts = new Posts();
+  }
 
   @GetMapping(value = "/posts")
   public Posts listPosts() {
@@ -20,7 +29,9 @@ public class PostRestController {
   }
 
   @PostMapping(value = "/posts")
-  public Post addPost(@RequestBody Post post) {
+  public Post addPost(@RequestBody Post inputPost, @RequestHeader(value = "owner", required = false) String owner) {
+    userRepository.save(new User(owner));
+    Post post = new Post(inputPost.getTitle(), inputPost.getHref(), userRepository.findOne(owner));
     postRepository.save(post);
     return post;
   }
@@ -51,10 +62,8 @@ public class PostRestController {
   @PutMapping(value = "/posts/{id}")
   public Post updatePost(@PathVariable("id") Long id, @RequestBody Post inputPost) {
     Post post = postRepository.findOne(id);
-    String href = inputPost.getHref();
-    String title = inputPost.getTitle();
-    post.setHref(href);
-    post.setTitle(title);
+    post.setHref(inputPost.getHref());
+    post.setTitle(inputPost.getTitle());
     postRepository.save(post);
     return post;
   }

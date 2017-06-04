@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Add/Edit food</title>
+</head>
+<body>
+<h1>Add/Edit food</h1>
+  <div th:if="${food}">
+    <p th:if="${error}" th:text="${error}"></p>
+    <form th:action="@{/__${food.getId()}__/edit/execute}" method="post">
+      <input type="text" name="mealDate" th:placeholder="${food.getMealDate()}"/>
+      <input type="text" name="description" th:placeholder="${food.getDescription()}"/>
+      <input list="type1" name="type" th:value="${food.getType().getType()}" th:placeholder="${food.getType().getType()}">
+        <datalist id="type1" name="type">
+          <option th:each="option : ${options}" th:value="${option.getType()}"></option>
+        </datalist>
+      </input>
+      <input type="text" name="calories" th:placeholder="${food.getCalories()}"/>
+      <button type="submit">Save</button>
+      <a th:href="@{/}">Cancel</a>
+    </form>
+  </div>
+  <div th:unless="${food}">
+    <p th:if="${error}" th:text="${error}"></p>
+    <form th:action="@{/add/create}" method="post">
+      <input type="text" name="mealDate" th:placeholder="Mealdate"/>
+      <input type="text" name="description" th:placeholder="Description"/>
+      <input list="type2" name="type" th:placeholder="Type">
+        <datalist id="type2" name="type">
+          <option th:each="option : ${options}" th:value="${option.getType()}"></option>
+        </datalist>
+      </input>
+      <input type="text" name="calories" th:placeholder="Calories"/>
+      <button type="submit">Save</button>
+      <a th:href="@{/}">Cancel</a>
+    </form>
+  </div>
+</body>
+</html>

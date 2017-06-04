@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class CalorieCounterApplication implements CommandLineRunner {
-	private final FoodTypeRepository foodTypeRepository;
+  private final FoodTypeRepository foodTypeRepository;
 
   @Autowired
   public CalorieCounterApplication(FoodTypeRepository foodTypeRepository) {
@@ -17,12 +17,12 @@ public class CalorieCounterApplication implements CommandLineRunner {
   }
 
   public static void main(String[] args) {
-		SpringApplication.run(CalorieCounterApplication.class, args);
-	}
+    SpringApplication.run(CalorieCounterApplication.class, args);
+  }
 
-	@Override
-	public void run(String... args) throws Exception {
-		foodTypeRepository.save(new FoodType("Breakfast"));
+  @Override
+  public void run(String... args) throws Exception {
+    foodTypeRepository.save(new FoodType("Breakfast"));
     foodTypeRepository.save(new FoodType("Elevenses"));
     foodTypeRepository.save(new FoodType("Lunch"));
     foodTypeRepository.save(new FoodType("Snack"));

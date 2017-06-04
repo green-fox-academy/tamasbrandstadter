@@ -1,7 +1,7 @@
 package com.greenfox.model;
 
 public class OkResponse {
-  public String status;
+  private String status;
 
   public OkResponse(){
     this.status = "ok";

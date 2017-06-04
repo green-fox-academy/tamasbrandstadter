@@ -23,5 +23,4 @@ public class FoodType {
   public void setType(String type) {
     this.type = type;
   }
-
 }

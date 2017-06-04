@@ -30,12 +30,4 @@ public class Stats {
   public void setNumberOfMeals(long numberOfMeals) {
     this.numberOfMeals = numberOfMeals;
   }
-
-//  public void calculateTotalCalories(List<Food> foodList){
-//    double totalCalories = 0;
-//    for (Food food : foodList) {
-//      totalCalories += food.getCalories();
-//    }
-//    this.totalCalories = totalCalories;
-//  }
 }

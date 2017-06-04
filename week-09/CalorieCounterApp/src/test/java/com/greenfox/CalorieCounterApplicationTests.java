@@ -17,7 +17,6 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.nio.charset.Charset;
-import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -38,13 +37,9 @@ public class CalorieCounterApplicationTests {
   @Autowired
   private WebApplicationContext webApplicationContext;
 
-  @Autowired
-  private FoodRepository foodRepository;
-
   @Before
   public void setup() throws Exception {
     this.mockMvc = webAppContextSetup(webApplicationContext).build();
-    //foodRepository.save(new Food(new FoodType("Breakfast"), "salata", 100.0, "2017.06.02."));
   }
 
   @Test

@@ -7,7 +7,7 @@ public class Main {
     System.out.println(splitStringOther("a,bcd,e,fg", ','));
   }
 
-  private static List<String> splitString(String inputString, char inputChar) {
+  public static List<String> splitString(String inputString, char inputChar) {
     String tempString = "";
     List<String> returnList = new ArrayList<>();
     for (int i = 0; i < inputString.length(); i++) {
@@ -22,7 +22,7 @@ public class Main {
     return returnList;
   }
 
-  private static List<String> splitStringOther(String text, char separator) {
+  public static List<String> splitStringOther(String text, char separator) {
     List<String> returnList = new ArrayList<>();
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < text.length(); i++) {

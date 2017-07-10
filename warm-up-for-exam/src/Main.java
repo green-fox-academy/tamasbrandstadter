@@ -4,11 +4,10 @@ import java.util.List;
 public class Main {
   public static void main(String[] args) {
     System.out.println(splitString("a,bcd,e,fg", ','));
+    System.out.println(splitStringOther("a,bcd,e,fg", ','));
   }
 
-  //Create a function takes a string and a letter and splits the string to an list of strings
-  //by the letter like: "a,bcd,e,fg" and ','becomes ["a", "bcd", "e", "fg"]
-  public static List<String> splitString(String inputString, char inputChar) {
+  private static List<String> splitString(String inputString, char inputChar) {
     String tempString = "";
     List<String> returnList = new ArrayList<>();
     for (int i = 0; i < inputString.length(); i++) {
@@ -20,6 +19,22 @@ public class Main {
       }
     }
     returnList.add(tempString);
+    return returnList;
+  }
+
+  private static List<String> splitStringOther(String text, char separator) {
+    List<String> returnList = new ArrayList<>();
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < text.length(); i++) {
+      char at = text.charAt(i);
+      if (at == separator) {
+        returnList.add(sb.toString());
+        sb = new StringBuilder();
+      } else {
+        sb.append(at);
+      }
+    }
+    returnList.add(sb.toString());
     return returnList;
   }
 }

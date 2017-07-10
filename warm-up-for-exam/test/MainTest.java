@@ -10,7 +10,7 @@ class MainTest {
   private static List<String> testList;
 
   @BeforeAll
-  public static void initObjects() {
+  static void initList() {
     testList = new ArrayList<>();
     testList.add("a");
     testList.add("bcd");

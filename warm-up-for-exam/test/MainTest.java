@@ -38,11 +38,11 @@ class MainTest {
 
   @Test
   void testForSize(){
-    List<String> returnedList = Main.splitString("a,bcd,e,fg", ',');
+    List<String> returnedList = Main.splitStringOther("a,bcd,e,fg", ',');
     assertTrue(returnedList.size() == 4);
     assertTrue(returnedList.size() == testList.size());
   }
-  
+
   @Test
   void testForSizeOther(){
     assertTrue(4 == Main.splitString("a,bcd,e,fg", ',').size());

@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -6,24 +7,24 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MainTest {
+  private static List<String> testList;
 
-  @Test
-  void testForSplitOne() {
-    List<String> testList = new ArrayList<>();
+  @BeforeAll
+  public static void initObjects() {
+    testList = new ArrayList<>();
     testList.add("a");
     testList.add("bcd");
     testList.add("e");
     testList.add("fg");
+  }
+
+  @Test
+  void testForReturnSplitOne() {
     assertEquals(testList, Main.splitString("a,bcd,e,fg", ','));
   }
 
   @Test
-  void testForSplitTwo() {
-    List<String> testList = new ArrayList<>();
-    testList.add("e");
-    testList.add("xvj");
-    testList.add("z");
-    testList.add("1");
-    assertEquals(testList, Main.splitStringOther("e,xvj,z,1", ','));
+  void testForReturnSecondMethod() {
+    assertEquals(testList, Main.splitStringOther("a,bcd,e,fg", ','));
   }
 }
